@@ -1,3 +1,3 @@
 # Dynamic Time Warping による時系列クラスタリング
-[Dynanic Time Warping](https://commons.wikimedia.org/wiki/File:Euclidean_vs_DTW.jpg)
-<img src="https://commons.wikimedia.org/wiki/File:Euclidean_vs_DTW.jpg" width = "500"> 
+<img src="https://upload.wikimedia.org/wikipedia/commons/6/69/Euclidean_vs_DTW.jpg" width = "400"> 
+
