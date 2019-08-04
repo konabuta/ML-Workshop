@@ -13,12 +13,12 @@ Machine Learning Workshop materials on Azure Machine Learning
 ### Azure Machine Learning service 
 Azure Machine Learning service は、機械学習/深層学習のプロセスを全てカバーする分析プラットフォームです。
 
-<img src="https://docs.microsoft.com/en-us/azure/machine-learning/service/media/concept-azure-machine-learning-architecture/workflow.png" width = "600">   
+<img src="https://docs.microsoft.com/en-us/azure/machine-learning/service/media/concept-azure-machine-learning-architecture/workflow.png" width = "500">   
 
 ### Power BI
 企業のあらゆるデータも可視化・探索することができるビジネスユーザ向けのサービスです。
 
-<img src="https://powerbicdn.azureedge.net/cvt-fb1e2b82bc75f091b9556cde890c10a6ccc1090e0ce83484c26d20dacbcf8e52/pictures/pages/desktop/provide_800_450.gif?636996593618659388" width="600">
+<img src="https://powerbicdn.azureedge.net/cvt-fb1e2b82bc75f091b9556cde890c10a6ccc1090e0ce83484c26d20dacbcf8e52/pictures/pages/desktop/provide_800_450.gif?636996593618659388" width="400">
 
 ### Azure Databricks
 マネージドな Spark プラットフォームです。大量データに対する加工や機械学習を高速に実行することができます。
@@ -41,32 +41,36 @@ pip install --upgrade azureml-sdk[notebooks,automl,explain,contrib] azureml-data
 
 ## [品質管理 (Quality Control)](./Quality-Control) ##
 
-### [ビジュアル要因探索](./Quality-Control/KeyInfluencers)
+### [ビジュアル要因探索](./Quality-Control/Key-Influencers)
 - Power BI (Desktop/service)
     - Key Influencers
  
-### [**Decision Tree による品質の要因探索**](./Quality-Control/Statistics-approach)
+<!-- ### [**Decision Tree による品質の要因探索**](./Quality-Control/Statistics-approach)
+- Azure Machine Learning service (Python)
+    - メトリック記録、モデル管理、データ管理 -->
+
+### [**Decision Tree による品質の要因探索**](./Quality-Control/DecisionTree)
 - Azure Machine Learning service (Python)
     - メトリック記録、モデル管理、データ管理
 
-### [**自動機械学習による品質予測モデル構築**](./Quality-Control/Quality-Prediction)
+<!-- ### [**自動機械学習による品質予測モデル構築**](./Quality-Control/Quality-Prediction)
 - Azure Machine Learning service (Python)
-    - Automated Machine Learning
+    - Automated Machine Learning -->
 
-### [**モデル解釈手法による品質の要因探索**](./Quality-Control/Root-Cause-Analysis-Explainability)
+### [**モデル解釈手法による品質の要因探索**](./Quality-Control/FactoryQC-Interpret)
 - Azure Machine Learning service (Python)
     - Automated Machine Learning
     - Interpretability SDK
 
 
-### 外観検査モデルのアプリケーションへのデプロイ
+<!-- ### 外観検査モデルのアプリケーションへのデプロイ
 - Custom Vision Service による画像分類モデル構築
-- ONNXモデルのWindows Machine Learning デプロイ
+- ONNXモデルのWindows Machine Learning デプロイ -->
 
 <br/>
 
 ## [設備保全 (Predictive Maintenance)](./Predictive-Maintenance) ##
-### [**LSTMによる設備保全**](./Predictive-Maintenance/Predict-RUL-lstm-remote)
+### [**LSTMによる設備保全**](./Predictive-Maintenance/lstm-RUL-prediction)
 - LSTMによるRULの時系列予測モデル作成
 - GPU Cluster on Machine Learning Compute 
 
