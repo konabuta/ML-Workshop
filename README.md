@@ -47,17 +47,27 @@ pip install --upgrade azureml-sdk[notebooks,automl,explain,contrib] azureml-data
 
 ## [品質管理 (Quality Control)](./Quality-Control) ##
 
-### [ビジュアル要因探索](./Quality-Control/Key-Influencers)
+### [Pythonデータ探索](./Quality-Control/Python-Explore) 
+- Azure Databricks
+    - Histogram
+    - Scatter Plot
+    - Correlation Matrix
+
+### [ビジュアル要因探索](./Quality-Control/Visual-Explore)
 - Power BI (Desktop/service)
+    - Histogram
+    - Scatter Plot
     - Key Influencers
+
  
 <!-- ### [**Decision Tree による品質の要因探索**](./Quality-Control/Statistics-approach)
 - Azure Machine Learning service (Python)
     - メトリック記録、モデル管理、データ管理 -->
 
-### [**Decision Tree による品質の要因探索**](./Quality-Control/DecisionTree)
+### [**Decision Tree による品質の要因探索**](./Quality-Control/Statistics)
 - Azure Machine Learning service (Python)
-    - メトリック記録、モデル管理、データ管理
+    - Scikit Learn Decision Tree
+    - メトリック記録、モデル管理
 
 <!-- ### [**自動機械学習による品質予測モデル構築**](./Quality-Control/Quality-Prediction)
 - Azure Machine Learning service (Python)
