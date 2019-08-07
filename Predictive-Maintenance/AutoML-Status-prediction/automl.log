@@ -1,0 +1,496 @@
+2019-08-08 01:02:59,713 - INFO - 199 : Starting usage telemetry collection
+2019-08-08 01:02:59,761 - INFO - 199 : Extracting user Data
+2019-08-08 01:02:59,765 - INFO - 199 : User has validation defined, no train rule based validation needed.
+2019-08-08 01:02:59,769 - INFO - 199 : Start creating parent run with DTO:  - name: automl-classification-pm
+ - subscription_id: 9c0f91b8-eb2f-484c-979c-15848c098a6b
+ - region: japaneast
+ - compute_target: local
+ - spark_context: None
+ - spark_service: None
+ - iterations: 10
+ - primary_metric: AUC_weighted
+ - task_type: classification
+ - validation_size: 0.0
+ - n_cross_validations: 3
+ - y_min: None
+ - y_max: None
+ - num_classes: 2
+ - preprocess: False
+ - lag_length: 0
+ - is_timeseries: False
+ - max_cores_per_iteration: 1
+ - max_concurrent_iterations: 1
+ - iteration_timeout_minutes: 10
+ - mem_in_mb: None
+ - enforce_time_on_windows: False
+ - experiment_timeout_minutes: None
+ - experiment_exit_score: None
+ - whitelist_models: None
+ - blacklist_algos: ['XGBoostClassifier', 'XGBoostClassifier', 'KNN', 'SVM']
+ - auto_blacklist: True
+ - blacklist_samples_reached: True
+ - exclude_nan_labels: True
+ - verbosity: 20
+ - show_warnings: False
+ - model_explainability: False
+ - service_url: None
+ - sdk_url: None
+ - sdk_packages: None
+ - enable_onnx_compatible_models: False
+ - enable_feature_sweeping: True
+ - telemetry_verbosity: INFO
+ - send_telemetry: True
+ - enable_early_stopping: False
+ - early_stopping_n_iters: 10
+ - metrics: None
+ - enable_ensembling: True
+ - enable_stack_ensembling: True
+ - ensemble_iterations: 10
+ - enable_tf: False
+ - enable_cache: True
+ - enable_subsampling: False
+ - subsample_seed: None
+ - enable_nimbusml: False
+ - use_incremental_learning: False
+ - cost_mode: 0
+ - metric_operation: maximize.
+2019-08-08 01:03:01,056 - INFO - 199 : [RunId:AutoML_07e79484-e977-4c6a-8d4c-2f151ce86c97]SDK dependencies versions:{"azureml-widgets": "1.0.55", "azureml-train": "1.0.55", "azureml-train-restclients-hyperdrive": "1.0.55", "azureml-train-core": "1.0.55", "azureml-train-automl": "1.0.55", "azureml-telemetry": "1.0.55", "azureml-sdk": "1.0.55", "azureml-pipeline": "1.0.55", "azureml-pipeline-steps": "1.0.55", "azureml-pipeline-core": "1.0.55", "azureml-explain-model": "1.0.55", "azureml-dataprep": "1.1.10", "azureml-dataprep-native": "13.0.0", "azureml-core": "1.0.55", "azureml-contrib-services": "1.0.55", "azureml-contrib-server": "1.0.55", "azureml-contrib-notebook": "1.0.55", "azureml-contrib-explain-model": "1.0.55", "azureml-automl-core": "1.0.55"}.
+2019-08-08 01:03:01,178 - INFO - 199 : [ParentRunID:AutoML_07e79484-e977-4c6a-8d4c-2f151ce86c97] Local run using input X and y.
+2019-08-08 01:03:01,179 - INFO - 199 : Parent Run ID: AutoML_07e79484-e977-4c6a-8d4c-2f151ce86c97
+2019-08-08 01:03:01,179 - INFO - 199 : [ParentRunId:AutoML_07e79484-e977-4c6a-8d4c-2f151ce86c97]Input X datatype is <class 'numpy.ndarray'>, shape is (20631, 25), datasize is 4126200.
+2019-08-08 01:03:01,179 - INFO - 199 : [ParentRunId:AutoML_07e79484-e977-4c6a-8d4c-2f151ce86c97]Input y datatype is <class 'numpy.ndarray'>, shape is (20631,), datasize is 165048.
+2019-08-08 01:03:01,180 - INFO - 199 : {"Module": "[ONNXConverter]", "Event": "[InitInput]", "Status": "[Start]", "ModelName": "AutoML_ONNX_Model_[AutoML_07e79484-e977-4c6a-8d4c-2f151ce86c97]", "ModelDesc": {"ParentRunId": "AutoML_07e79484-e977-4c6a-8d4c-2f151ce86c97"}, "Message": "Input initialization started."}
+2019-08-08 01:03:01,210 - INFO - 199 : {"Module": "[ONNXConverter]", "Event": "[InitInput]", "Status": "[End.Succeeded]", "ModelName": "AutoML_ONNX_Model_[AutoML_07e79484-e977-4c6a-8d4c-2f151ce86c97]", "ModelDesc": {"ParentRunId": "AutoML_07e79484-e977-4c6a-8d4c-2f151ce86c97"}, "Message": "Input initialization succeeded."}
+2019-08-08 01:03:01,211 - INFO - 199 : ActivityStarted, PreProcess
+2019-08-08 01:03:01,211 - INFO - 199 : Pre-processing user data
+2019-08-08 01:03:01,211 - INFO - 199 : The size of raw data is: 4291731
+2019-08-08 01:03:01,212 - INFO - 199 : [YCol]RawFeatureStats:{"num_unique_vals": "2", "total_number_vals": "20631", "total_number_vals_including_nans": "20631", "num_na": "0", "column_type": "\"integer\"", "lengths": "null", "num_unique_lens": "0", "average_entry_length": "0", "average_number_spaces": "0", "cardinality_ratio": "0", "is_datetime": "false", "is_all_nan": "false"}
+2019-08-08 01:03:01,214 - INFO - 199 : [XColNum:0]RawFeatureStats:{"num_unique_vals": "158", "total_number_vals": "20631", "total_number_vals_including_nans": "20631", "num_na": "0", "column_type": "\"floating\"", "lengths": "null", "num_unique_lens": "0", "average_entry_length": "0", "average_number_spaces": "0", "cardinality_ratio": "0", "is_datetime": "false", "is_all_nan": "false"}
+2019-08-08 01:03:01,215 - INFO - 199 : [XColNum:1]RawFeatureStats:{"num_unique_vals": "13", "total_number_vals": "20631", "total_number_vals_including_nans": "20631", "num_na": "0", "column_type": "\"floating\"", "lengths": "null", "num_unique_lens": "0", "average_entry_length": "0", "average_number_spaces": "0", "cardinality_ratio": "0", "is_datetime": "false", "is_all_nan": "false"}
+2019-08-08 01:03:01,216 - INFO - 199 : [XColNum:2]RawFeatureStats:{"num_unique_vals": "1", "total_number_vals": "20631", "total_number_vals_including_nans": "20631", "num_na": "0", "column_type": "\"floating\"", "lengths": "null", "num_unique_lens": "0", "average_entry_length": "0", "average_number_spaces": "0", "cardinality_ratio": "0", "is_datetime": "false", "is_all_nan": "false"}
+2019-08-08 01:03:01,217 - INFO - 199 : [XColNum:3]RawFeatureStats:{"num_unique_vals": "362", "total_number_vals": "20631", "total_number_vals_including_nans": "20631", "num_na": "0", "column_type": "\"floating\"", "lengths": "null", "num_unique_lens": "0", "average_entry_length": "0", "average_number_spaces": "0", "cardinality_ratio": "0", "is_datetime": "false", "is_all_nan": "false"}
+2019-08-08 01:03:01,217 - INFO - 199 : [XColNum:4]RawFeatureStats:{"num_unique_vals": "1", "total_number_vals": "20631", "total_number_vals_including_nans": "20631", "num_na": "0", "column_type": "\"floating\"", "lengths": "null", "num_unique_lens": "0", "average_entry_length": "0", "average_number_spaces": "0", "cardinality_ratio": "0", "is_datetime": "false", "is_all_nan": "false"}
+2019-08-08 01:03:01,219 - INFO - 199 : [XColNum:5]RawFeatureStats:{"num_unique_vals": "310", "total_number_vals": "20631", "total_number_vals_including_nans": "20631", "num_na": "0", "column_type": "\"floating\"", "lengths": "null", "num_unique_lens": "0", "average_entry_length": "0", "average_number_spaces": "0", "cardinality_ratio": "0", "is_datetime": "false", "is_all_nan": "false"}
+2019-08-08 01:03:01,220 - INFO - 199 : [XColNum:6]RawFeatureStats:{"num_unique_vals": "3012", "total_number_vals": "20631", "total_number_vals_including_nans": "20631", "num_na": "0", "column_type": "\"floating\"", "lengths": "null", "num_unique_lens": "0", "average_entry_length": "0", "average_number_spaces": "0", "cardinality_ratio": "0", "is_datetime": "false", "is_all_nan": "false"}
+2019-08-08 01:03:01,221 - INFO - 199 : [XColNum:7]RawFeatureStats:{"num_unique_vals": "4051", "total_number_vals": "20631", "total_number_vals_including_nans": "20631", "num_na": "0", "column_type": "\"floating\"", "lengths": "null", "num_unique_lens": "0", "average_entry_length": "0", "average_number_spaces": "0", "cardinality_ratio": "0", "is_datetime": "false", "is_all_nan": "false"}
+2019-08-08 01:03:01,222 - INFO - 199 : [XColNum:8]RawFeatureStats:{"num_unique_vals": "1", "total_number_vals": "20631", "total_number_vals_including_nans": "20631", "num_na": "0", "column_type": "\"floating\"", "lengths": "null", "num_unique_lens": "0", "average_entry_length": "0", "average_number_spaces": "0", "cardinality_ratio": "0", "is_datetime": "false", "is_all_nan": "false"}
+2019-08-08 01:03:01,223 - INFO - 199 : [XColNum:9]RawFeatureStats:{"num_unique_vals": "2", "total_number_vals": "20631", "total_number_vals_including_nans": "20631", "num_na": "0", "column_type": "\"floating\"", "lengths": "null", "num_unique_lens": "0", "average_entry_length": "0", "average_number_spaces": "0", "cardinality_ratio": "0", "is_datetime": "false", "is_all_nan": "false"}
+2019-08-08 01:03:01,223 - INFO - 199 : [XColNum:10]RawFeatureStats:{"num_unique_vals": "513", "total_number_vals": "20631", "total_number_vals_including_nans": "20631", "num_na": "0", "column_type": "\"floating\"", "lengths": "null", "num_unique_lens": "0", "average_entry_length": "0", "average_number_spaces": "0", "cardinality_ratio": "0", "is_datetime": "false", "is_all_nan": "false"}
+2019-08-08 01:03:01,224 - INFO - 199 : [XColNum:11]RawFeatureStats:{"num_unique_vals": "53", "total_number_vals": "20631", "total_number_vals_including_nans": "20631", "num_na": "0", "column_type": "\"floating\"", "lengths": "null", "num_unique_lens": "0", "average_entry_length": "0", "average_number_spaces": "0", "cardinality_ratio": "0", "is_datetime": "false", "is_all_nan": "false"}
+2019-08-08 01:03:01,225 - INFO - 199 : [XColNum:12]RawFeatureStats:{"num_unique_vals": "6403", "total_number_vals": "20631", "total_number_vals_including_nans": "20631", "num_na": "0", "column_type": "\"floating\"", "lengths": "null", "num_unique_lens": "0", "average_entry_length": "0", "average_number_spaces": "0", "cardinality_ratio": "0", "is_datetime": "false", "is_all_nan": "false"}
+2019-08-08 01:03:01,226 - INFO - 199 : [XColNum:13]RawFeatureStats:{"num_unique_vals": "1", "total_number_vals": "20631", "total_number_vals_including_nans": "20631", "num_na": "0", "column_type": "\"floating\"", "lengths": "null", "num_unique_lens": "0", "average_entry_length": "0", "average_number_spaces": "0", "cardinality_ratio": "0", "is_datetime": "false", "is_all_nan": "false"}
+2019-08-08 01:03:01,227 - INFO - 199 : [XColNum:14]RawFeatureStats:{"num_unique_vals": "159", "total_number_vals": "20631", "total_number_vals_including_nans": "20631", "num_na": "0", "column_type": "\"floating\"", "lengths": "null", "num_unique_lens": "0", "average_entry_length": "0", "average_number_spaces": "0", "cardinality_ratio": "0", "is_datetime": "false", "is_all_nan": "false"}
+2019-08-08 01:03:01,228 - INFO - 199 : [XColNum:15]RawFeatureStats:{"num_unique_vals": "427", "total_number_vals": "20631", "total_number_vals_including_nans": "20631", "num_na": "0", "column_type": "\"floating\"", "lengths": "null", "num_unique_lens": "0", "average_entry_length": "0", "average_number_spaces": "0", "cardinality_ratio": "0", "is_datetime": "false", "is_all_nan": "false"}
+2019-08-08 01:03:01,229 - INFO - 199 : [XColNum:16]RawFeatureStats:{"num_unique_vals": "56", "total_number_vals": "20631", "total_number_vals_including_nans": "20631", "num_na": "0", "column_type": "\"floating\"", "lengths": "null", "num_unique_lens": "0", "average_entry_length": "0", "average_number_spaces": "0", "cardinality_ratio": "0", "is_datetime": "false", "is_all_nan": "false"}
+2019-08-08 01:03:01,230 - INFO - 199 : [XColNum:17]RawFeatureStats:{"num_unique_vals": "6078", "total_number_vals": "20631", "total_number_vals_including_nans": "20631", "num_na": "0", "column_type": "\"floating\"", "lengths": "null", "num_unique_lens": "0", "average_entry_length": "0", "average_number_spaces": "0", "cardinality_ratio": "0", "is_datetime": "false", "is_all_nan": "false"}
+2019-08-08 01:03:01,230 - INFO - 199 : [XColNum:18]RawFeatureStats:{"num_unique_vals": "1918", "total_number_vals": "20631", "total_number_vals_including_nans": "20631", "num_na": "0", "column_type": "\"floating\"", "lengths": "null", "num_unique_lens": "0", "average_entry_length": "0", "average_number_spaces": "0", "cardinality_ratio": "0", "is_datetime": "false", "is_all_nan": "false"}
+2019-08-08 01:03:01,231 - INFO - 199 : [XColNum:19]RawFeatureStats:{"num_unique_vals": "1", "total_number_vals": "20631", "total_number_vals_including_nans": "20631", "num_na": "0", "column_type": "\"floating\"", "lengths": "null", "num_unique_lens": "0", "average_entry_length": "0", "average_number_spaces": "0", "cardinality_ratio": "0", "is_datetime": "false", "is_all_nan": "false"}
+2019-08-08 01:03:01,232 - INFO - 199 : [XColNum:20]RawFeatureStats:{"num_unique_vals": "13", "total_number_vals": "20631", "total_number_vals_including_nans": "20631", "num_na": "0", "column_type": "\"floating\"", "lengths": "null", "num_unique_lens": "0", "average_entry_length": "0", "average_number_spaces": "0", "cardinality_ratio": "0", "is_datetime": "false", "is_all_nan": "false"}
+2019-08-08 01:03:01,233 - INFO - 199 : [XColNum:21]RawFeatureStats:{"num_unique_vals": "1", "total_number_vals": "20631", "total_number_vals_including_nans": "20631", "num_na": "0", "column_type": "\"floating\"", "lengths": "null", "num_unique_lens": "0", "average_entry_length": "0", "average_number_spaces": "0", "cardinality_ratio": "0", "is_datetime": "false", "is_all_nan": "false"}
+2019-08-08 01:03:01,233 - INFO - 199 : [XColNum:22]RawFeatureStats:{"num_unique_vals": "1", "total_number_vals": "20631", "total_number_vals_including_nans": "20631", "num_na": "0", "column_type": "\"floating\"", "lengths": "null", "num_unique_lens": "0", "average_entry_length": "0", "average_number_spaces": "0", "cardinality_ratio": "0", "is_datetime": "false", "is_all_nan": "false"}
+2019-08-08 01:03:01,234 - INFO - 199 : [XColNum:23]RawFeatureStats:{"num_unique_vals": "120", "total_number_vals": "20631", "total_number_vals_including_nans": "20631", "num_na": "0", "column_type": "\"floating\"", "lengths": "null", "num_unique_lens": "0", "average_entry_length": "0", "average_number_spaces": "0", "cardinality_ratio": "0", "is_datetime": "false", "is_all_nan": "false"}
+2019-08-08 01:03:01,235 - INFO - 199 : [XColNum:24]RawFeatureStats:{"num_unique_vals": "4745", "total_number_vals": "20631", "total_number_vals_including_nans": "20631", "num_na": "0", "column_type": "\"floating\"", "lengths": "null", "num_unique_lens": "0", "average_entry_length": "0", "average_number_spaces": "0", "cardinality_ratio": "0", "is_datetime": "false", "is_all_nan": "false"}
+2019-08-08 01:03:01,236 - INFO - 199 : X datatype is <class 'numpy.ndarray'>, shape is (20631, 25), datasize is 4126200.
+2019-08-08 01:03:01,236 - INFO - 199 : y datatype is <class 'numpy.ndarray'>, shape is (20631,), datasize is 165048.
+2019-08-08 01:03:01,236 - INFO - 199 : No preprocessing of data to be done here
+2019-08-08 01:03:01,236 - INFO - 199 : Creating cross validations
+2019-08-08 01:03:01,354 - INFO - 199 : Found cross validation type: KFoldCrossValidationSplit
+2019-08-08 01:03:01,355 - INFO - 199 : Completed creating cross-validation folds and featurizing them
+2019-08-08 01:03:01,372 - INFO - 199 : The size of transformed data is: 4293044
+2019-08-08 01:03:01,373 - INFO - 199 : ActivityCompleted: Activity=PreProcess, HowEnded=Success, Duration=161.75 [ms]
+2019-08-08 01:03:01,548 - INFO - 199 : [ParentRunId:AutoML_07e79484-e977-4c6a-8d4c-2f151ce86c97]X datatype is <class 'numpy.ndarray'>, shape is (20631, 25), datasize is 4126200.
+2019-08-08 01:03:01,548 - INFO - 199 : [ParentRunId:AutoML_07e79484-e977-4c6a-8d4c-2f151ce86c97]y datatype is <class 'numpy.ndarray'>, shape is (20631,), datasize is 165048.
+2019-08-08 01:03:01,910 - INFO - 199 : Initialized ClientDatasets object from transformed_data_context.. deleting transformed_data_context.
+2019-08-08 01:03:02,039 - INFO - 199 : Start local loop.
+2019-08-08 01:03:02,040 - INFO - 199 : Start iteration: 0
+2019-08-08 01:03:02,040 - INFO - 199 : ActivityStarted, FitIteration
+2019-08-08 01:03:02,041 - INFO - 199 : ActivityStarted, GetPipeline
+2019-08-08 01:03:02,042 - INFO - 199 : Querying Jasmine for next task.
+2019-08-08 01:03:02,497 - INFO - 199 : ActivityCompleted: Activity=GetPipeline, HowEnded=Success, Duration=455.45 [ms]
+2019-08-08 01:03:02,497 - INFO - 199 : Received pipeline ID f2f08837edc96ada39aee31331227c92b06f8bd7
+2019-08-08 01:03:02,841 - WARNING - 199 : psutil not found, skipping logging cpu and memory
+2019-08-08 01:03:02,841 - INFO - 199 : [RunId:AutoML_07e79484-e977-4c6a-8d4c-2f151ce86c97_0]Platform information: Darwin-18.7.0-x86_64-i386-64bit.
+2019-08-08 01:03:02,842 - INFO - 199 : All versions str:
+{"webencodings": "0.5.1", "wcwidth": "0.1.7", "traitlets": "4.3.2", "tornado": "6.0.1", "testpath": "0.4.2", "terminado": "0.8.1", "send2trash": "1.5.0", "pyzmq": "18.0.1", "pyyaml": "5.1", "pyrsistent": "0.14.11", "pygments": "2.3.1", "ptyprocess": "0.6.0", "prompt-toolkit": "2.0.9", "prometheus-client": "0.6.0", "pickleshare": "0.7.5", "pexpect": "4.6.0", "parso": "0.3.4", "pandocfilters": "1.4.2", "notebook": "5.7.6", "nbformat": "4.4.0", "mistune": "0.8.4", "markupsafe": "1.1.1", "lxml": "4.3.2", "jupyter-nbextensions-configurator": "0.4.1", "jupyter-latex-envs": "1.4.6", "jupyter-highlight-selected-word": "0.2.0", "jupyter-core": "4.4.0", "jupyter-contrib-nbextensions": "0.5.1", "jupyter-contrib-core": "0.3.3", "jupyter-client": "5.2.4", "jsonschema": "3.0.1", "jinja2": "2.10", "jedi": "0.13.3", "ipython": "7.3.0", "ipython-genutils": "0.2.0", "ipykernel": "5.1.0", "entrypoints": "0.3", "defusedxml": "0.5.0", "bleach": "3.1.0", "backcall": "0.1.0", "attrs": "19.1.0", "appnope": "0.1.0", "wrapt": "1.11.2", "widgetsnbextension": "3.4.2", "wheel": "0.30.0", "werkzeug": "0.15.4", "websocket-client": "0.56.0", "urllib3": "1.24.3", "typing": "3.6.6", "typing-extensions": "3.7.2", "typed-ast": "1.4.0", "tqdm": "4.32.1", "textwrap3": "0.9.2", "termcolor": "1.1.0", "tensorflow": "1.14.0", "tensorflow-estimator": "1.14.0", "tensorboard": "1.14.0", "tenacity": "5.0.4", "tabulate": "0.8.3", "statsmodels": "0.9.0", "smart-open": "1.8.3", "sklearn-pandas": "1.7.0", "skl2onnx": "1.4.9", "six": "1.12.0", "shap": "0.28.5", "setuptools": "41.0.1", "secretstorage": "3.1.1", "seaborn": "0.9.0", "scipy": "1.1.0", "scikit-learn": "0.20.3", "scikit-image": "0.15.0", "s3transfer": "0.2.0", "ruamel.yaml": "0.15.89", "resource": "0.2.1", "requests": "2.21.0", "requests-oauthlib": "1.2.0", "pywavelets": "1.0.3", "pytz": "2019.1", "python-easyconfig": "0.1.7", "python-dateutil": "2.8.0", "pyparsing": "2.4.0", "pyopenssl": "19.0.0", "pynacl": "1.3.0", "pylint": "2.3.1", "pyjwt": "1.7.1", "pydotplus": "2.0.2", "pycparser": "2.19", "pyasn1": "0.4.5", "protobuf": "3.7.1", "pip": "19.1.1", "pillow": "6.0.0", "patsy": "0.5.1", "pathspec": "0.5.9", "paramiko": "2.4.2", "papermill": "1.0.1", "pandas": "0.23.4", "onnxmltools": "1.4.1", "onnxconverter-common": "1.4.2", "onnx": "1.5.0", "oauthlib": "3.0.1", "numpy": "1.16.2", "nimbusml": "1.2.0", "networkx": "2.3", "ndg-httpsclient": "0.5.1", "nbconvert": "5.5.0", "msrestazure": "0.6.0", "msrest": "0.6.6", "mccabe": "0.6.1", "matplotlib": "3.0.3", "markdown": "3.1.1", "lightgbm": "2.2.1", "lazy-object-proxy": "1.4.1", "kiwisolver": "1.1.0", "keras2onnx": "1.4.0", "keras": "2.2.4", "keras-preprocessing": "1.0.9", "keras-applications": "1.0.7", "jsonsir": "0.0.2", "jsonpickle": "1.1", "jsonform": "0.0.2", "jmespath": "0.9.4", "jeepney": "0.4", "itsdangerous": "1.1.0", "isort": "4.3.20", "isodate": "0.6.0", "ipywidgets": "7.4.2", "imageio": "2.5.0", "idna": "2.8", "h5py": "2.9.0", "grpcio": "1.21.1", "google-pasta": "0.1.7", "gensim": "3.7.3", "gast": "0.2.2", "future": "0.17.1", "flask": "1.0.2", "dotnetcore2": "2.1.8", "docutils": "0.14", "docker": "3.7.2", "docker-pycreds": "0.4.0", "distro": "1.4.0", "dill": "0.2.9", "decorator": "4.4.0", "databricks-cli": "0.8.7", "cycler": "0.10.0", "cryptography": "2.6.1", "contextlib2": "0.5.5", "configparser": "3.7.4", "click": "7.0", "chardet": "3.0.4", "cffi": "1.12.3", "certifi": "2019.3.9", "botocore": "1.12.148", "boto3": "1.9.148", "boto": "2.49.0", "bcrypt": "3.1.6", "backports.weakref": "1.0.post1", "backports.tempfile": "1.0", "azureml-widgets": "1.0.55", "azureml-train": "1.0.55", "azureml-train-restclients-hyperdrive": "1.0.55", "azureml-train-core": "1.0.55", "azureml-train-automl": "1.0.55", "azureml-telemetry": "1.0.55", "azureml-sdk": "1.0.55", "azureml-pipeline": "1.0.55", "azureml-pipeline-steps": "1.0.55", "azureml-pipeline-core": "1.0.55", "azureml-explain-model": "1.0.55", "azureml-dataprep": "1.1.10", "azureml-dataprep-native": "13.0.0", "azureml-core": "1.0.55", "azureml-contrib-services": "1.0.55", "azureml-contrib-server": "1.0.55", "azureml-contrib-notebook": "1.0.55", "azureml-contrib-explain-model": "1.0.55", "azureml-automl-core": "1.0.55", "azure-nspkg": "3.0.2", "azure-mgmt-storage": "3.3.0", "azure-mgmt-resource": "2.1.0", "azure-mgmt-nspkg": "3.0.2", "azure-mgmt-keyvault": "1.1.0", "azure-mgmt-containerregistry": "2.8.0", "azure-mgmt-authorization": "0.51.1", "azure-graphrbac": "0.61.0", "azure-common": "1.1.20", "astroid": "2.2.5", "astor": "0.8.0", "asn1crypto": "0.24.0", "applicationinsights": "0.11.9", "ansiwrap": "0.8.4", "adal": "1.2.1", "absl-py": "0.7.1"}
+2019-08-08 01:03:02,842 - INFO - 199 : [RunId:AutoML_07e79484-e977-4c6a-8d4c-2f151ce86c97_0][Starting fit_pipeline]memory usage 343306240
+2019-08-08 01:03:02,843 - INFO - 199 : [RunId:AutoML_07e79484-e977-4c6a-8d4c-2f151ce86c97_0][Starting fit_pipeline]child memory usage 5406720
+2019-08-08 01:03:02,843 - INFO - 199 : [RunId:AutoML_07e79484-e977-4c6a-8d4c-2f151ce86c97_0][Starting fit_pipeline]cpu time 4.660571
+2019-08-08 01:03:02,843 - INFO - 199 : [RunId:AutoML_07e79484-e977-4c6a-8d4c-2f151ce86c97_0][Starting fit_pipeline]child cpu time 0.042427
+2019-08-08 01:03:02,844 - WARNING - 199 : psutil not found, skipping logging cpu and memory
+2019-08-08 01:03:02,844 - INFO - 199 : [RunId:AutoML_07e79484-e977-4c6a-8d4c-2f151ce86c97_0]Platform information: Darwin-18.7.0-x86_64-i386-64bit.
+2019-08-08 01:03:02,844 - INFO - 199 : Using child run AutoML_07e79484-e977-4c6a-8d4c-2f151ce86c97_0
+2019-08-08 01:03:02,844 - INFO - 199 : [RunId:AutoML_07e79484-e977-4c6a-8d4c-2f151ce86c97_0][Before preprocess]memory usage 343306240
+2019-08-08 01:03:02,845 - INFO - 199 : [RunId:AutoML_07e79484-e977-4c6a-8d4c-2f151ce86c97_0][Before preprocess]child memory usage 5406720
+2019-08-08 01:03:02,845 - INFO - 199 : [RunId:AutoML_07e79484-e977-4c6a-8d4c-2f151ce86c97_0][Before preprocess]cpu time 4.662361
+2019-08-08 01:03:02,845 - INFO - 199 : [RunId:AutoML_07e79484-e977-4c6a-8d4c-2f151ce86c97_0][Before preprocess]child cpu time 0.042427
+2019-08-08 01:03:02,845 - INFO - 199 : [RunId:AutoML_07e79484-e977-4c6a-8d4c-2f151ce86c97_0][Before executing pipeline]memory usage 343306240
+2019-08-08 01:03:02,846 - INFO - 199 : [RunId:AutoML_07e79484-e977-4c6a-8d4c-2f151ce86c97_0][Before executing pipeline]child memory usage 5406720
+2019-08-08 01:03:02,846 - INFO - 199 : [RunId:AutoML_07e79484-e977-4c6a-8d4c-2f151ce86c97_0][Before executing pipeline]cpu time 4.663247
+2019-08-08 01:03:02,846 - INFO - 199 : [RunId:AutoML_07e79484-e977-4c6a-8d4c-2f151ce86c97_0][Before executing pipeline]child cpu time 0.042427
+2019-08-08 01:03:02,846 - INFO - 199 : Start executing pipeline {"objects": [{"class_name": "StandardScaler", "module": "sklearn.preprocessing", "param_args": [], "param_kwargs": {"with_mean": true, "with_std": true}, "prepared_kwargs": {}, "spec_class": "preproc"}, {"class_name": "SGDClassifierWrapper", "module": "automl.client.core.common.model_wrappers", "param_args": [], "param_kwargs": {"alpha": 2.653134693877551, "class_weight": null, "eta0": 0.0001, "fit_intercept": true, "l1_ratio": 0.36734693877551017, "learning_rate": "constant", "loss": "modified_huber", "max_iter": 1000, "penalty": "none", "power_t": 0.1111111111111111, "tol": 0.001}, "prepared_kwargs": {}, "spec_class": "sklearn"}], "pipeline_id": "f2f08837edc96ada39aee31331227c92b06f8bd7"}.
+2019-08-08 01:03:02,847 - INFO - 199 : Running with the following AutoML settings:
+ - name: automl-classification-pm
+ - subscription_id: 9c0f91b8-eb2f-484c-979c-15848c098a6b
+ - region: japaneast
+ - compute_target: local
+ - spark_context: None
+ - spark_service: None
+ - iterations: 10
+ - primary_metric: AUC_weighted
+ - task_type: classification
+ - validation_size: 0.0
+ - n_cross_validations: 3
+ - y_min: None
+ - y_max: None
+ - num_classes: 2
+ - preprocess: False
+ - lag_length: 0
+ - is_timeseries: False
+ - max_cores_per_iteration: 1
+ - max_concurrent_iterations: 1
+ - iteration_timeout_minutes: 10
+ - mem_in_mb: None
+ - enforce_time_on_windows: False
+ - experiment_timeout_minutes: None
+ - experiment_exit_score: None
+ - whitelist_models: None
+ - blacklist_algos: ['XGBoostClassifier', 'XGBoostClassifier', 'KNN', 'SVM']
+ - auto_blacklist: True
+ - blacklist_samples_reached: True
+ - exclude_nan_labels: True
+ - verbosity: 20
+ - show_warnings: False
+ - model_explainability: False
+ - service_url: None
+ - sdk_url: None
+ - sdk_packages: None
+ - enable_onnx_compatible_models: False
+ - enable_feature_sweeping: True
+ - telemetry_verbosity: INFO
+ - send_telemetry: True
+ - enable_early_stopping: False
+ - early_stopping_n_iters: 10
+ - metrics: None
+ - enable_ensembling: True
+ - enable_stack_ensembling: True
+ - ensemble_iterations: 10
+ - enable_tf: False
+ - enable_cache: True
+ - enable_subsampling: False
+ - subsample_seed: None
+ - enable_nimbusml: False
+ - use_incremental_learning: False
+ - cost_mode: 0
+ - metric_operation: maximize
+2019-08-08 01:03:02,847 - INFO - 199 : Component PrepareData finished after 9.213333333333333e-05 minutes.
+2019-08-08 01:03:02,847 - INFO - 199 : ActivityStarted: RunPipeline
+2019-08-08 01:03:05,519 - INFO - 324 : ActivityStarted: Run
+2019-08-08 01:03:05,541 - INFO - 324 : ActivityStarted: RunCV
+2019-08-08 01:03:05,544 - INFO - 324 : ActivityStarted: TimeFit
+2019-08-08 01:03:05,578 - INFO - 339 : ActivityCompleted: Activity=TimeFit, HowEnded=Success, Duration=33.79[ms]
+2019-08-08 01:03:05,579 - INFO - 324 : ActivityStarted: ComputeMetrics
+2019-08-08 01:03:05,579 - INFO - 324 : ActivityStarted: Predict
+2019-08-08 01:03:05,583 - INFO - 339 : ActivityCompleted: Activity=Predict, HowEnded=Success, Duration=4.27[ms]
+2019-08-08 01:03:05,584 - INFO - 199 : Classification metrics debug: {'y_test': (6877,), 'y_pred_probs': (6877, 2), 'unique_y_test': (2,), 'class_labels': (2,), 'train_labels': (2,), 'n_missing_train': 0, 'n_missing_valid': 0, 'sample_weight': None}
+2019-08-08 01:03:05,641 - INFO - 339 : ActivityCompleted: Activity=ComputeMetrics, HowEnded=Success, Duration=62.28[ms]
+2019-08-08 01:03:05,646 - INFO - 324 : ActivityStarted: TimeFit
+2019-08-08 01:03:05,672 - INFO - 339 : ActivityCompleted: Activity=TimeFit, HowEnded=Success, Duration=25.79[ms]
+2019-08-08 01:03:05,672 - INFO - 324 : ActivityStarted: ComputeMetrics
+2019-08-08 01:03:05,672 - INFO - 324 : ActivityStarted: Predict
+2019-08-08 01:03:05,673 - INFO - 339 : ActivityCompleted: Activity=Predict, HowEnded=Success, Duration=1.05[ms]
+2019-08-08 01:03:05,674 - INFO - 199 : Classification metrics debug: {'y_test': (6877,), 'y_pred_probs': (6877, 2), 'unique_y_test': (2,), 'class_labels': (2,), 'train_labels': (2,), 'n_missing_train': 0, 'n_missing_valid': 0, 'sample_weight': None}
+2019-08-08 01:03:05,729 - INFO - 339 : ActivityCompleted: Activity=ComputeMetrics, HowEnded=Success, Duration=56.72[ms]
+2019-08-08 01:03:05,732 - INFO - 324 : ActivityStarted: TimeFit
+2019-08-08 01:03:05,760 - INFO - 339 : ActivityCompleted: Activity=TimeFit, HowEnded=Success, Duration=28.37[ms]
+2019-08-08 01:03:05,761 - INFO - 324 : ActivityStarted: ComputeMetrics
+2019-08-08 01:03:05,761 - INFO - 324 : ActivityStarted: Predict
+2019-08-08 01:03:05,762 - INFO - 339 : ActivityCompleted: Activity=Predict, HowEnded=Success, Duration=1.14[ms]
+2019-08-08 01:03:05,763 - INFO - 199 : Classification metrics debug: {'y_test': (6877,), 'y_pred_probs': (6877, 2), 'unique_y_test': (2,), 'class_labels': (2,), 'train_labels': (2,), 'n_missing_train': 0, 'n_missing_valid': 0, 'sample_weight': None}
+2019-08-08 01:03:05,819 - INFO - 339 : ActivityCompleted: Activity=ComputeMetrics, HowEnded=Success, Duration=58.17[ms]
+2019-08-08 01:03:05,819 - INFO - 339 : ActivityCompleted: Activity=RunCV, HowEnded=Success, Duration=278.41[ms]
+2019-08-08 01:03:05,820 - INFO - 324 : ActivityStarted: RunCVMean
+2019-08-08 01:03:05,822 - INFO - 339 : ActivityCompleted: Activity=RunCVMean, HowEnded=Success, Duration=2.34[ms]
+2019-08-08 01:03:05,890 - INFO - 339 : ActivityCompleted: Activity=Run, HowEnded=Success, Duration=370.89[ms]
+2019-08-08 01:03:08,601 - INFO - 324 : ActivityStarted: Run
+2019-08-08 01:03:08,621 - INFO - 324 : ActivityStarted: TrainFull
+2019-08-08 01:03:08,622 - INFO - 324 : ActivityStarted: TimeFit
+2019-08-08 01:03:08,658 - INFO - 339 : ActivityCompleted: Activity=TimeFit, HowEnded=Success, Duration=36.6[ms]
+2019-08-08 01:03:08,659 - INFO - 324 : ActivityStarted: ComputeMetrics
+2019-08-08 01:03:08,659 - INFO - 324 : ActivityStarted: Predict
+2019-08-08 01:03:08,662 - INFO - 339 : ActivityCompleted: Activity=Predict, HowEnded=Success, Duration=2.8[ms]
+2019-08-08 01:03:08,663 - INFO - 199 : Classification metrics debug: {'y_test': (20631,), 'y_pred_probs': (20631, 2), 'unique_y_test': (2,), 'class_labels': (2,), 'train_labels': (2,), 'n_missing_train': 0, 'n_missing_valid': 0, 'sample_weight': None}
+2019-08-08 01:03:08,786 - INFO - 339 : ActivityCompleted: Activity=ComputeMetrics, HowEnded=Success, Duration=127.56[ms]
+2019-08-08 01:03:08,787 - INFO - 339 : ActivityCompleted: Activity=TrainFull, HowEnded=Success, Duration=165.92[ms]
+2019-08-08 01:03:08,873 - INFO - 339 : ActivityCompleted: Activity=Run, HowEnded=Success, Duration=271.84[ms]
+2019-08-08 01:03:09,280 - INFO - 199 : ActivityCompleted: Activity=RunPipeline, HowEnded=Success, Duration=6431.91[ms]
+2019-08-08 01:03:09,282 - INFO - 199 : [RunId:AutoML_07e79484-e977-4c6a-8d4c-2f151ce86c97_0][After executing pipeline]memory usage 343306240
+2019-08-08 01:03:09,282 - INFO - 199 : [RunId:AutoML_07e79484-e977-4c6a-8d4c-2f151ce86c97_0][After executing pipeline]child memory usage 265338880
+2019-08-08 01:03:09,293 - INFO - 199 : [RunId:AutoML_07e79484-e977-4c6a-8d4c-2f151ce86c97_0][After executing pipeline]cpu time 4.778967
+2019-08-08 01:03:09,294 - INFO - 199 : [RunId:AutoML_07e79484-e977-4c6a-8d4c-2f151ce86c97_0][After executing pipeline]child cpu time 6.992056
+2019-08-08 01:03:09,294 - INFO - 199 : Pipeline execution finished with a score of 0.987097956603138
+2019-08-08 01:03:09,294 - INFO - 199 : Start logging metrics for child run.
+2019-08-08 01:03:09,295 - INFO - 199 : ActivityStarted: MetricsAndSaveModel
+2019-08-08 01:03:09,717 - INFO - 199 : memory usage 343306240
+2019-08-08 01:03:09,718 - INFO - 199 : child memory usage 265338880
+2019-08-08 01:03:09,718 - INFO - 199 : cpu time 4.831138
+2019-08-08 01:03:09,718 - INFO - 199 : child cpu time 6.995171
+2019-08-08 01:03:11,326 - INFO - 199 : [RunId:AutoML_07e79484-e977-4c6a-8d4c-2f151ce86c97_0][Start ONNX Convert in fit pipeline]memory usage 343306240
+2019-08-08 01:03:11,326 - INFO - 199 : [RunId:AutoML_07e79484-e977-4c6a-8d4c-2f151ce86c97_0][Start ONNX Convert in fit pipeline]child memory usage 265338880
+2019-08-08 01:03:11,327 - INFO - 199 : [RunId:AutoML_07e79484-e977-4c6a-8d4c-2f151ce86c97_0][Start ONNX Convert in fit pipeline]cpu time 5.068496
+2019-08-08 01:03:11,327 - INFO - 199 : [RunId:AutoML_07e79484-e977-4c6a-8d4c-2f151ce86c97_0][Start ONNX Convert in fit pipeline]child cpu time 6.995171
+2019-08-08 01:03:11,328 - INFO - 199 : ActivityStarted: ONNXConversion
+2019-08-08 01:03:11,329 - INFO - 199 : {"Module": "[ONNXConverter]", "Event": "[Convert]", "Status": "[Start]", "ModelName": "AutoML_ONNX_Model_[AutoML_07e79484-e977-4c6a-8d4c-2f151ce86c97_0]", "ModelDesc": {"AutoMLSDKVer": "1.0.55", "ExperimentName": "automl-classification-pm", "RunId": "AutoML_07e79484-e977-4c6a-8d4c-2f151ce86c97_0", "PipeId": "f2f08837edc96ada39aee31331227c92b06f8bd7"}, "Message": {"Info": "Model conversion started.", "IsOnnxCompatibleMode": false}}
+2019-08-08 01:03:11,368 - INFO - 199 : {"Module": "[ONNXConverter]", "Event": "[Convert]", "Status": "[End.Succeeded]", "ModelName": "AutoML_ONNX_Model_[AutoML_07e79484-e977-4c6a-8d4c-2f151ce86c97_0]", "ModelDesc": {"AutoMLSDKVer": "1.0.55", "ExperimentName": "automl-classification-pm", "RunId": "AutoML_07e79484-e977-4c6a-8d4c-2f151ce86c97_0", "PipeId": "f2f08837edc96ada39aee31331227c92b06f8bd7"}, "Message": {"Info": "Model conversion succeeded.", "IsOnnxCompatibleMode": false}}
+2019-08-08 01:03:11,368 - INFO - 199 : ActivityCompleted: Activity=ONNXConversion, HowEnded=Success, Duration=40.83[ms]
+2019-08-08 01:03:11,369 - INFO - 199 : [RunId:AutoML_07e79484-e977-4c6a-8d4c-2f151ce86c97_0][End ONNX Convert in fit pipeline]memory usage 343306240
+2019-08-08 01:03:11,369 - INFO - 199 : [RunId:AutoML_07e79484-e977-4c6a-8d4c-2f151ce86c97_0][End ONNX Convert in fit pipeline]child memory usage 265338880
+2019-08-08 01:03:11,369 - INFO - 199 : [RunId:AutoML_07e79484-e977-4c6a-8d4c-2f151ce86c97_0][End ONNX Convert in fit pipeline]cpu time 5.090982
+2019-08-08 01:03:11,369 - INFO - 199 : [RunId:AutoML_07e79484-e977-4c6a-8d4c-2f151ce86c97_0][End ONNX Convert in fit pipeline]child cpu time 6.995171
+2019-08-08 01:03:11,909 - WARNING - 199 : Did not recognize metric: fit_time. Will not log.
+2019-08-08 01:03:11,909 - WARNING - 199 : Did not recognize metric: predict_time. Will not log.
+2019-08-08 01:03:11,910 - WARNING - 199 : Did not recognize metric: train time. Will not log.
+2019-08-08 01:03:11,910 - INFO - 199 : run_id:AutoML_07e79484-e977-4c6a-8d4c-2f151ce86c97_0, pipeline_id:f2f08837edc96ada39aee31331227c92b06f8bd7,The following metrics have been logged for the child run: {'recall_score_weighted': 0.9611264601812805, 'recall_score_micro': 0.9611264601812805, 'AUC_macro': 0.987097956603138, 'recall_score_macro': 0.917551047381162, 'weighted_accuracy': 0.9761123040169296, 'AUC_weighted': 0.987097956603138, 'f1_score_micro': 0.9611264601812805, 'AUC_micro': 0.987097956603138, 'average_precision_score_macro': 0.9506587959731346, 'balanced_accuracy': 0.917551047381162, 'accuracy': 0.9611264601812805, 'norm_macro_recall': 0.8351020947623241, 'log_loss': 0.12410370667150493, 'precision_score_micro': 0.9611264601812805, 'accuracy_table': <class 'dict'>, 'average_precision_score_micro': 0.9506587959731346, 'precision_score_macro': 0.9285999174929755, 'f1_score_macro': 0.9229156926786916, 'confusion_matrix': <class 'dict'>, 'precision_score_weighted': 0.9607114250564693, 'average_precision_score_weighted': 0.9506587959731346, 'f1_score_weighted': 0.9608620755333174, 'fit_time': 0.02901266666666667, 'predict_time': 0.002484, 'train time': 0.031496666666666666}.
+2019-08-08 01:03:12,344 - INFO - 199 : Component CompleteRun finished after 0.1583644 minutes.
+2019-08-08 01:03:12,344 - INFO - 199 : ActivityCompleted: Activity=MetricsAndSaveModel, HowEnded=Success, Duration=3049.45[ms]
+2019-08-08 01:03:12,798 - INFO - 199 : [RunId:AutoML_07e79484-e977-4c6a-8d4c-2f151ce86c97_0][End fit_pipeline]memory usage 343306240
+2019-08-08 01:03:12,798 - INFO - 199 : [RunId:AutoML_07e79484-e977-4c6a-8d4c-2f151ce86c97_0][End fit_pipeline]child memory usage 265338880
+2019-08-08 01:03:12,798 - INFO - 199 : [RunId:AutoML_07e79484-e977-4c6a-8d4c-2f151ce86c97_0][End fit_pipeline]cpu time 5.323485
+2019-08-08 01:03:12,799 - INFO - 199 : [RunId:AutoML_07e79484-e977-4c6a-8d4c-2f151ce86c97_0][End fit_pipeline]child cpu time 6.995171
+2019-08-08 01:03:12,802 - INFO - 199 : ActivityCompleted: Activity=FitIteration, HowEnded=Success, Duration=10761.5 [ms]
+2019-08-08 01:03:12,803 - INFO - 199 : Start iteration: 1
+2019-08-08 01:03:12,803 - INFO - 199 : ActivityStarted, FitIteration
+2019-08-08 01:03:12,803 - INFO - 199 : ActivityStarted, GetPipeline
+2019-08-08 01:03:12,803 - INFO - 199 : Querying Jasmine for next task.
+2019-08-08 01:03:13,730 - INFO - 199 : ActivityCompleted: Activity=GetPipeline, HowEnded=Success, Duration=926.3 [ms]
+2019-08-08 01:03:13,730 - INFO - 199 : Received pipeline ID f873311e8cfb2bcdbeb6c20367cf912f4ee6733e
+2019-08-08 01:03:14,214 - WARNING - 199 : psutil not found, skipping logging cpu and memory
+2019-08-08 01:03:14,215 - INFO - 199 : [RunId:AutoML_07e79484-e977-4c6a-8d4c-2f151ce86c97_1]Platform information: Darwin-18.7.0-x86_64-i386-64bit.
+2019-08-08 01:03:14,215 - INFO - 199 : All versions str:
+{"webencodings": "0.5.1", "wcwidth": "0.1.7", "traitlets": "4.3.2", "tornado": "6.0.1", "testpath": "0.4.2", "terminado": "0.8.1", "send2trash": "1.5.0", "pyzmq": "18.0.1", "pyyaml": "5.1", "pyrsistent": "0.14.11", "pygments": "2.3.1", "ptyprocess": "0.6.0", "prompt-toolkit": "2.0.9", "prometheus-client": "0.6.0", "pickleshare": "0.7.5", "pexpect": "4.6.0", "parso": "0.3.4", "pandocfilters": "1.4.2", "notebook": "5.7.6", "nbformat": "4.4.0", "mistune": "0.8.4", "markupsafe": "1.1.1", "lxml": "4.3.2", "jupyter-nbextensions-configurator": "0.4.1", "jupyter-latex-envs": "1.4.6", "jupyter-highlight-selected-word": "0.2.0", "jupyter-core": "4.4.0", "jupyter-contrib-nbextensions": "0.5.1", "jupyter-contrib-core": "0.3.3", "jupyter-client": "5.2.4", "jsonschema": "3.0.1", "jinja2": "2.10", "jedi": "0.13.3", "ipython": "7.3.0", "ipython-genutils": "0.2.0", "ipykernel": "5.1.0", "entrypoints": "0.3", "defusedxml": "0.5.0", "bleach": "3.1.0", "backcall": "0.1.0", "attrs": "19.1.0", "appnope": "0.1.0", "wrapt": "1.11.2", "widgetsnbextension": "3.4.2", "wheel": "0.30.0", "werkzeug": "0.15.4", "websocket-client": "0.56.0", "urllib3": "1.24.3", "typing": "3.6.6", "typing-extensions": "3.7.2", "typed-ast": "1.4.0", "tqdm": "4.32.1", "textwrap3": "0.9.2", "termcolor": "1.1.0", "tensorflow": "1.14.0", "tensorflow-estimator": "1.14.0", "tensorboard": "1.14.0", "tenacity": "5.0.4", "tabulate": "0.8.3", "statsmodels": "0.9.0", "smart-open": "1.8.3", "sklearn-pandas": "1.7.0", "skl2onnx": "1.4.9", "six": "1.12.0", "shap": "0.28.5", "setuptools": "41.0.1", "secretstorage": "3.1.1", "seaborn": "0.9.0", "scipy": "1.1.0", "scikit-learn": "0.20.3", "scikit-image": "0.15.0", "s3transfer": "0.2.0", "ruamel.yaml": "0.15.89", "resource": "0.2.1", "requests": "2.21.0", "requests-oauthlib": "1.2.0", "pywavelets": "1.0.3", "pytz": "2019.1", "python-easyconfig": "0.1.7", "python-dateutil": "2.8.0", "pyparsing": "2.4.0", "pyopenssl": "19.0.0", "pynacl": "1.3.0", "pylint": "2.3.1", "pyjwt": "1.7.1", "pydotplus": "2.0.2", "pycparser": "2.19", "pyasn1": "0.4.5", "protobuf": "3.7.1", "pip": "19.1.1", "pillow": "6.0.0", "patsy": "0.5.1", "pathspec": "0.5.9", "paramiko": "2.4.2", "papermill": "1.0.1", "pandas": "0.23.4", "onnxmltools": "1.4.1", "onnxconverter-common": "1.4.2", "onnx": "1.5.0", "oauthlib": "3.0.1", "numpy": "1.16.2", "nimbusml": "1.2.0", "networkx": "2.3", "ndg-httpsclient": "0.5.1", "nbconvert": "5.5.0", "msrestazure": "0.6.0", "msrest": "0.6.6", "mccabe": "0.6.1", "matplotlib": "3.0.3", "markdown": "3.1.1", "lightgbm": "2.2.1", "lazy-object-proxy": "1.4.1", "kiwisolver": "1.1.0", "keras2onnx": "1.4.0", "keras": "2.2.4", "keras-preprocessing": "1.0.9", "keras-applications": "1.0.7", "jsonsir": "0.0.2", "jsonpickle": "1.1", "jsonform": "0.0.2", "jmespath": "0.9.4", "jeepney": "0.4", "itsdangerous": "1.1.0", "isort": "4.3.20", "isodate": "0.6.0", "ipywidgets": "7.4.2", "imageio": "2.5.0", "idna": "2.8", "h5py": "2.9.0", "grpcio": "1.21.1", "google-pasta": "0.1.7", "gensim": "3.7.3", "gast": "0.2.2", "future": "0.17.1", "flask": "1.0.2", "dotnetcore2": "2.1.8", "docutils": "0.14", "docker": "3.7.2", "docker-pycreds": "0.4.0", "distro": "1.4.0", "dill": "0.2.9", "decorator": "4.4.0", "databricks-cli": "0.8.7", "cycler": "0.10.0", "cryptography": "2.6.1", "contextlib2": "0.5.5", "configparser": "3.7.4", "click": "7.0", "chardet": "3.0.4", "cffi": "1.12.3", "certifi": "2019.3.9", "botocore": "1.12.148", "boto3": "1.9.148", "boto": "2.49.0", "bcrypt": "3.1.6", "backports.weakref": "1.0.post1", "backports.tempfile": "1.0", "azureml-widgets": "1.0.55", "azureml-train": "1.0.55", "azureml-train-restclients-hyperdrive": "1.0.55", "azureml-train-core": "1.0.55", "azureml-train-automl": "1.0.55", "azureml-telemetry": "1.0.55", "azureml-sdk": "1.0.55", "azureml-pipeline": "1.0.55", "azureml-pipeline-steps": "1.0.55", "azureml-pipeline-core": "1.0.55", "azureml-explain-model": "1.0.55", "azureml-dataprep": "1.1.10", "azureml-dataprep-native": "13.0.0", "azureml-core": "1.0.55", "azureml-contrib-services": "1.0.55", "azureml-contrib-server": "1.0.55", "azureml-contrib-notebook": "1.0.55", "azureml-contrib-explain-model": "1.0.55", "azureml-automl-core": "1.0.55", "azure-nspkg": "3.0.2", "azure-mgmt-storage": "3.3.0", "azure-mgmt-resource": "2.1.0", "azure-mgmt-nspkg": "3.0.2", "azure-mgmt-keyvault": "1.1.0", "azure-mgmt-containerregistry": "2.8.0", "azure-mgmt-authorization": "0.51.1", "azure-graphrbac": "0.61.0", "azure-common": "1.1.20", "astroid": "2.2.5", "astor": "0.8.0", "asn1crypto": "0.24.0", "applicationinsights": "0.11.9", "ansiwrap": "0.8.4", "adal": "1.2.1", "absl-py": "0.7.1"}
+2019-08-08 01:03:14,216 - INFO - 199 : [RunId:AutoML_07e79484-e977-4c6a-8d4c-2f151ce86c97_1][Starting fit_pipeline]memory usage 343306240
+2019-08-08 01:03:14,216 - INFO - 199 : [RunId:AutoML_07e79484-e977-4c6a-8d4c-2f151ce86c97_1][Starting fit_pipeline]child memory usage 265338880
+2019-08-08 01:03:14,216 - INFO - 199 : [RunId:AutoML_07e79484-e977-4c6a-8d4c-2f151ce86c97_1][Starting fit_pipeline]cpu time 5.418411
+2019-08-08 01:03:14,217 - INFO - 199 : [RunId:AutoML_07e79484-e977-4c6a-8d4c-2f151ce86c97_1][Starting fit_pipeline]child cpu time 6.995171
+2019-08-08 01:03:14,217 - WARNING - 199 : psutil not found, skipping logging cpu and memory
+2019-08-08 01:03:14,217 - INFO - 199 : [RunId:AutoML_07e79484-e977-4c6a-8d4c-2f151ce86c97_1]Platform information: Darwin-18.7.0-x86_64-i386-64bit.
+2019-08-08 01:03:14,218 - INFO - 199 : Using child run AutoML_07e79484-e977-4c6a-8d4c-2f151ce86c97_1
+2019-08-08 01:03:14,218 - INFO - 199 : [RunId:AutoML_07e79484-e977-4c6a-8d4c-2f151ce86c97_1][Before preprocess]memory usage 343306240
+2019-08-08 01:03:14,218 - INFO - 199 : [RunId:AutoML_07e79484-e977-4c6a-8d4c-2f151ce86c97_1][Before preprocess]child memory usage 265338880
+2019-08-08 01:03:14,218 - INFO - 199 : [RunId:AutoML_07e79484-e977-4c6a-8d4c-2f151ce86c97_1][Before preprocess]cpu time 5.420403
+2019-08-08 01:03:14,219 - INFO - 199 : [RunId:AutoML_07e79484-e977-4c6a-8d4c-2f151ce86c97_1][Before preprocess]child cpu time 6.995171
+2019-08-08 01:03:14,219 - INFO - 199 : [RunId:AutoML_07e79484-e977-4c6a-8d4c-2f151ce86c97_1][Before executing pipeline]memory usage 343306240
+2019-08-08 01:03:14,219 - INFO - 199 : [RunId:AutoML_07e79484-e977-4c6a-8d4c-2f151ce86c97_1][Before executing pipeline]child memory usage 265338880
+2019-08-08 01:03:14,219 - INFO - 199 : [RunId:AutoML_07e79484-e977-4c6a-8d4c-2f151ce86c97_1][Before executing pipeline]cpu time 5.421294
+2019-08-08 01:03:14,220 - INFO - 199 : [RunId:AutoML_07e79484-e977-4c6a-8d4c-2f151ce86c97_1][Before executing pipeline]child cpu time 6.995171
+2019-08-08 01:03:14,220 - INFO - 199 : Start executing pipeline {"objects": [{"class_name": "StandardScaler", "module": "sklearn.preprocessing", "param_args": [], "param_kwargs": {"with_mean": true, "with_std": true}, "prepared_kwargs": {}, "spec_class": "preproc"}, {"class_name": "SGDClassifierWrapper", "module": "automl.client.core.common.model_wrappers", "param_args": [], "param_kwargs": {"alpha": 1.4286571428571428, "class_weight": null, "eta0": 0.01, "fit_intercept": true, "l1_ratio": 0.7551020408163265, "learning_rate": "constant", "loss": "log", "max_iter": 1000, "penalty": "none", "power_t": 0.4444444444444444, "tol": 0.001}, "prepared_kwargs": {}, "spec_class": "sklearn"}], "pipeline_id": "f873311e8cfb2bcdbeb6c20367cf912f4ee6733e"}.
+2019-08-08 01:03:14,220 - INFO - 199 : Running with the following AutoML settings:
+ - name: automl-classification-pm
+ - subscription_id: 9c0f91b8-eb2f-484c-979c-15848c098a6b
+ - region: japaneast
+ - compute_target: local
+ - spark_context: None
+ - spark_service: None
+ - iterations: 10
+ - primary_metric: AUC_weighted
+ - task_type: classification
+ - validation_size: 0.0
+ - n_cross_validations: 3
+ - y_min: None
+ - y_max: None
+ - num_classes: 2
+ - preprocess: False
+ - lag_length: 0
+ - is_timeseries: False
+ - max_cores_per_iteration: 1
+ - max_concurrent_iterations: 1
+ - iteration_timeout_minutes: 10
+ - mem_in_mb: None
+ - enforce_time_on_windows: False
+ - experiment_timeout_minutes: None
+ - experiment_exit_score: None
+ - whitelist_models: None
+ - blacklist_algos: ['XGBoostClassifier', 'XGBoostClassifier', 'KNN', 'SVM']
+ - auto_blacklist: True
+ - blacklist_samples_reached: True
+ - exclude_nan_labels: True
+ - verbosity: 20
+ - show_warnings: False
+ - model_explainability: False
+ - service_url: None
+ - sdk_url: None
+ - sdk_packages: None
+ - enable_onnx_compatible_models: False
+ - enable_feature_sweeping: True
+ - telemetry_verbosity: INFO
+ - send_telemetry: True
+ - enable_early_stopping: False
+ - early_stopping_n_iters: 10
+ - metrics: None
+ - enable_ensembling: True
+ - enable_stack_ensembling: True
+ - ensemble_iterations: 10
+ - enable_tf: False
+ - enable_cache: True
+ - enable_subsampling: False
+ - subsample_seed: None
+ - enable_nimbusml: False
+ - use_incremental_learning: False
+ - cost_mode: 0
+ - metric_operation: maximize
+2019-08-08 01:03:14,220 - INFO - 199 : Component PrepareData finished after 9.061666666666667e-05 minutes.
+2019-08-08 01:03:14,221 - INFO - 199 : ActivityStarted: RunPipeline
+2019-08-08 01:03:16,791 - INFO - 324 : ActivityStarted: Run
+2019-08-08 01:03:16,812 - INFO - 324 : ActivityStarted: RunCV
+2019-08-08 01:03:16,815 - INFO - 324 : ActivityStarted: TimeFit
+2019-08-08 01:03:16,838 - INFO - 339 : ActivityCompleted: Activity=TimeFit, HowEnded=Success, Duration=22.48[ms]
+2019-08-08 01:03:16,838 - INFO - 324 : ActivityStarted: ComputeMetrics
+2019-08-08 01:03:16,838 - INFO - 324 : ActivityStarted: Predict
+2019-08-08 01:03:16,840 - INFO - 339 : ActivityCompleted: Activity=Predict, HowEnded=Success, Duration=1.65[ms]
+2019-08-08 01:03:16,841 - INFO - 199 : Classification metrics debug: {'y_test': (6877,), 'y_pred_probs': (6877, 2), 'unique_y_test': (2,), 'class_labels': (2,), 'train_labels': (2,), 'n_missing_train': 0, 'n_missing_valid': 0, 'sample_weight': None}
+2019-08-08 01:03:16,892 - INFO - 339 : ActivityCompleted: Activity=ComputeMetrics, HowEnded=Success, Duration=54.06[ms]
+2019-08-08 01:03:16,897 - INFO - 324 : ActivityStarted: TimeFit
+2019-08-08 01:03:16,920 - INFO - 339 : ActivityCompleted: Activity=TimeFit, HowEnded=Success, Duration=22.87[ms]
+2019-08-08 01:03:16,920 - INFO - 324 : ActivityStarted: ComputeMetrics
+2019-08-08 01:03:16,920 - INFO - 324 : ActivityStarted: Predict
+2019-08-08 01:03:16,921 - INFO - 339 : ActivityCompleted: Activity=Predict, HowEnded=Success, Duration=1.11[ms]
+2019-08-08 01:03:16,922 - INFO - 199 : Classification metrics debug: {'y_test': (6877,), 'y_pred_probs': (6877, 2), 'unique_y_test': (2,), 'class_labels': (2,), 'train_labels': (2,), 'n_missing_train': 0, 'n_missing_valid': 0, 'sample_weight': None}
+2019-08-08 01:03:16,973 - INFO - 339 : ActivityCompleted: Activity=ComputeMetrics, HowEnded=Success, Duration=53.36[ms]
+2019-08-08 01:03:16,978 - INFO - 324 : ActivityStarted: TimeFit
+2019-08-08 01:03:17,003 - INFO - 339 : ActivityCompleted: Activity=TimeFit, HowEnded=Success, Duration=24.75[ms]
+2019-08-08 01:03:17,003 - INFO - 324 : ActivityStarted: ComputeMetrics
+2019-08-08 01:03:17,003 - INFO - 324 : ActivityStarted: Predict
+2019-08-08 01:03:17,004 - INFO - 339 : ActivityCompleted: Activity=Predict, HowEnded=Success, Duration=1.08[ms]
+2019-08-08 01:03:17,005 - INFO - 199 : Classification metrics debug: {'y_test': (6877,), 'y_pred_probs': (6877, 2), 'unique_y_test': (2,), 'class_labels': (2,), 'train_labels': (2,), 'n_missing_train': 0, 'n_missing_valid': 0, 'sample_weight': None}
+2019-08-08 01:03:17,055 - INFO - 339 : ActivityCompleted: Activity=ComputeMetrics, HowEnded=Success, Duration=52.36[ms]
+2019-08-08 01:03:17,056 - INFO - 339 : ActivityCompleted: Activity=RunCV, HowEnded=Success, Duration=243.81[ms]
+2019-08-08 01:03:17,056 - INFO - 324 : ActivityStarted: RunCVMean
+2019-08-08 01:03:17,058 - INFO - 339 : ActivityCompleted: Activity=RunCVMean, HowEnded=Success, Duration=2.11[ms]
+2019-08-08 01:03:17,112 - INFO - 339 : ActivityCompleted: Activity=Run, HowEnded=Success, Duration=320.48[ms]
+2019-08-08 01:03:19,724 - INFO - 199 : memory usage 343306240
+2019-08-08 01:03:19,725 - INFO - 199 : child memory usage 265338880
+2019-08-08 01:03:19,726 - INFO - 199 : cpu time 5.539647
+2019-08-08 01:03:19,727 - INFO - 199 : child cpu time 10.690609
+2019-08-08 01:03:19,821 - INFO - 324 : ActivityStarted: Run
+2019-08-08 01:03:19,843 - INFO - 324 : ActivityStarted: TrainFull
+2019-08-08 01:03:19,843 - INFO - 324 : ActivityStarted: TimeFit
+2019-08-08 01:03:19,881 - INFO - 339 : ActivityCompleted: Activity=TimeFit, HowEnded=Success, Duration=37.81[ms]
+2019-08-08 01:03:19,881 - INFO - 324 : ActivityStarted: ComputeMetrics
+2019-08-08 01:03:19,882 - INFO - 324 : ActivityStarted: Predict
+2019-08-08 01:03:19,884 - INFO - 339 : ActivityCompleted: Activity=Predict, HowEnded=Success, Duration=2.65[ms]
+2019-08-08 01:03:19,885 - INFO - 199 : Classification metrics debug: {'y_test': (20631,), 'y_pred_probs': (20631, 2), 'unique_y_test': (2,), 'class_labels': (2,), 'train_labels': (2,), 'n_missing_train': 0, 'n_missing_valid': 0, 'sample_weight': None}
+2019-08-08 01:03:19,989 - INFO - 339 : ActivityCompleted: Activity=ComputeMetrics, HowEnded=Success, Duration=107.02[ms]
+2019-08-08 01:03:19,989 - INFO - 339 : ActivityCompleted: Activity=TrainFull, HowEnded=Success, Duration=146.26[ms]
+2019-08-08 01:03:20,043 - INFO - 339 : ActivityCompleted: Activity=Run, HowEnded=Success, Duration=222.23[ms]
+2019-08-08 01:03:20,502 - INFO - 199 : ActivityCompleted: Activity=RunPipeline, HowEnded=Success, Duration=6280.74[ms]
+2019-08-08 01:03:20,502 - INFO - 199 : [RunId:AutoML_07e79484-e977-4c6a-8d4c-2f151ce86c97_1][After executing pipeline]memory usage 343306240
+2019-08-08 01:03:20,503 - INFO - 199 : [RunId:AutoML_07e79484-e977-4c6a-8d4c-2f151ce86c97_1][After executing pipeline]child memory usage 265338880
+2019-08-08 01:03:20,503 - INFO - 199 : [RunId:AutoML_07e79484-e977-4c6a-8d4c-2f151ce86c97_1][After executing pipeline]cpu time 5.571573
+2019-08-08 01:03:20,504 - INFO - 199 : [RunId:AutoML_07e79484-e977-4c6a-8d4c-2f151ce86c97_1][After executing pipeline]child cpu time 13.865108
+2019-08-08 01:03:20,504 - INFO - 199 : Pipeline execution finished with a score of 0.9895240533412107
+2019-08-08 01:03:20,504 - INFO - 199 : Start logging metrics for child run.
+2019-08-08 01:03:20,505 - INFO - 199 : ActivityStarted: MetricsAndSaveModel
+2019-08-08 01:03:22,214 - INFO - 199 : [RunId:AutoML_07e79484-e977-4c6a-8d4c-2f151ce86c97_1][Start ONNX Convert in fit pipeline]memory usage 343306240
+2019-08-08 01:03:22,214 - INFO - 199 : [RunId:AutoML_07e79484-e977-4c6a-8d4c-2f151ce86c97_1][Start ONNX Convert in fit pipeline]child memory usage 265338880
+2019-08-08 01:03:22,215 - INFO - 199 : [RunId:AutoML_07e79484-e977-4c6a-8d4c-2f151ce86c97_1][Start ONNX Convert in fit pipeline]cpu time 5.857735
+2019-08-08 01:03:22,225 - INFO - 199 : [RunId:AutoML_07e79484-e977-4c6a-8d4c-2f151ce86c97_1][Start ONNX Convert in fit pipeline]child cpu time 13.865108
+2019-08-08 01:03:22,225 - INFO - 199 : ActivityStarted: ONNXConversion
+2019-08-08 01:03:22,226 - INFO - 199 : {"Module": "[ONNXConverter]", "Event": "[Convert]", "Status": "[Start]", "ModelName": "AutoML_ONNX_Model_[AutoML_07e79484-e977-4c6a-8d4c-2f151ce86c97_1]", "ModelDesc": {"AutoMLSDKVer": "1.0.55", "ExperimentName": "automl-classification-pm", "RunId": "AutoML_07e79484-e977-4c6a-8d4c-2f151ce86c97_1", "PipeId": "f873311e8cfb2bcdbeb6c20367cf912f4ee6733e"}, "Message": {"Info": "Model conversion started.", "IsOnnxCompatibleMode": false}}
+2019-08-08 01:03:22,236 - INFO - 199 : {"Module": "[ONNXConverter]", "Event": "[Convert]", "Status": "[End.Succeeded]", "ModelName": "AutoML_ONNX_Model_[AutoML_07e79484-e977-4c6a-8d4c-2f151ce86c97_1]", "ModelDesc": {"AutoMLSDKVer": "1.0.55", "ExperimentName": "automl-classification-pm", "RunId": "AutoML_07e79484-e977-4c6a-8d4c-2f151ce86c97_1", "PipeId": "f873311e8cfb2bcdbeb6c20367cf912f4ee6733e"}, "Message": {"Info": "Model conversion succeeded.", "IsOnnxCompatibleMode": false}}
+2019-08-08 01:03:22,236 - INFO - 199 : ActivityCompleted: Activity=ONNXConversion, HowEnded=Success, Duration=10.74[ms]
+2019-08-08 01:03:22,236 - INFO - 199 : [RunId:AutoML_07e79484-e977-4c6a-8d4c-2f151ce86c97_1][End ONNX Convert in fit pipeline]memory usage 343306240
+2019-08-08 01:03:22,236 - INFO - 199 : [RunId:AutoML_07e79484-e977-4c6a-8d4c-2f151ce86c97_1][End ONNX Convert in fit pipeline]child memory usage 265338880
+2019-08-08 01:03:22,237 - INFO - 199 : [RunId:AutoML_07e79484-e977-4c6a-8d4c-2f151ce86c97_1][End ONNX Convert in fit pipeline]cpu time 5.87783
+2019-08-08 01:03:22,237 - INFO - 199 : [RunId:AutoML_07e79484-e977-4c6a-8d4c-2f151ce86c97_1][End ONNX Convert in fit pipeline]child cpu time 13.865108
+2019-08-08 01:03:22,836 - WARNING - 199 : Did not recognize metric: fit_time. Will not log.
+2019-08-08 01:03:22,837 - WARNING - 199 : Did not recognize metric: train time. Will not log.
+2019-08-08 01:03:22,837 - WARNING - 199 : Did not recognize metric: predict_time. Will not log.
+2019-08-08 01:03:22,837 - INFO - 199 : run_id:AutoML_07e79484-e977-4c6a-8d4c-2f151ce86c97_1, pipeline_id:f873311e8cfb2bcdbeb6c20367cf912f4ee6733e,The following metrics have been logged for the child run: {'recall_score_weighted': 0.9616111676603171, 'recall_score_micro': 0.9616111676603171, 'AUC_macro': 0.9895240533412107, 'recall_score_macro': 0.914719060429491, 'weighted_accuracy': 0.9777157727777669, 'AUC_weighted': 0.9895240533412107, 'f1_score_micro': 0.9616111676603171, 'AUC_micro': 0.9895240533412107, 'average_precision_score_macro': 0.9524758902170914, 'balanced_accuracy': 0.914719060429491, 'accuracy': 0.9616111676603171, 'norm_macro_recall': 0.829438120858982, 'log_loss': 0.0914279360526082, 'precision_score_micro': 0.9616111676603171, 'accuracy_table': <class 'dict'>, 'average_precision_score_micro': 0.9524758902170914, 'precision_score_macro': 0.9325474912468285, 'f1_score_macro': 0.9232900911847265, 'confusion_matrix': <class 'dict'>, 'precision_score_weighted': 0.9610331280113122, 'average_precision_score_weighted': 0.9524758902170914, 'f1_score_weighted': 0.9612024556602234, 'fit_time': 0.023092, 'train time': 0.024610999999999997, 'predict_time': 0.0015190000000000002}.
+2019-08-08 01:03:23,462 - INFO - 199 : Component CompleteRun finished after 0.15411950000000002 minutes.
+2019-08-08 01:03:23,463 - INFO - 199 : ActivityCompleted: Activity=MetricsAndSaveModel, HowEnded=Success, Duration=2958.61[ms]
+2019-08-08 01:03:23,916 - INFO - 199 : [RunId:AutoML_07e79484-e977-4c6a-8d4c-2f151ce86c97_1][End fit_pipeline]memory usage 343306240
+2019-08-08 01:03:23,916 - INFO - 199 : [RunId:AutoML_07e79484-e977-4c6a-8d4c-2f151ce86c97_1][End fit_pipeline]child memory usage 265338880
+2019-08-08 01:03:23,916 - INFO - 199 : [RunId:AutoML_07e79484-e977-4c6a-8d4c-2f151ce86c97_1][End fit_pipeline]cpu time 6.174955
+2019-08-08 01:03:23,917 - INFO - 199 : [RunId:AutoML_07e79484-e977-4c6a-8d4c-2f151ce86c97_1][End fit_pipeline]child cpu time 13.865108
+2019-08-08 01:03:23,919 - INFO - 199 : ActivityCompleted: Activity=FitIteration, HowEnded=Success, Duration=11116.54 [ms]
+2019-08-08 01:03:23,920 - INFO - 199 : Start iteration: 2
+2019-08-08 01:03:23,921 - INFO - 199 : ActivityStarted, FitIteration
+2019-08-08 01:03:23,921 - INFO - 199 : ActivityStarted, GetPipeline
+2019-08-08 01:03:23,921 - INFO - 199 : Querying Jasmine for next task.
+2019-08-08 01:03:24,788 - INFO - 199 : ActivityCompleted: Activity=GetPipeline, HowEnded=Success, Duration=867.13 [ms]
+2019-08-08 01:03:24,789 - INFO - 199 : Received pipeline ID 3fcd5994fbc5693af6cf93d54810a746b5646707
+2019-08-08 01:03:25,126 - WARNING - 199 : psutil not found, skipping logging cpu and memory
+2019-08-08 01:03:25,126 - INFO - 199 : [RunId:AutoML_07e79484-e977-4c6a-8d4c-2f151ce86c97_2]Platform information: Darwin-18.7.0-x86_64-i386-64bit.
+2019-08-08 01:03:25,127 - INFO - 199 : All versions str:
+{"webencodings": "0.5.1", "wcwidth": "0.1.7", "traitlets": "4.3.2", "tornado": "6.0.1", "testpath": "0.4.2", "terminado": "0.8.1", "send2trash": "1.5.0", "pyzmq": "18.0.1", "pyyaml": "5.1", "pyrsistent": "0.14.11", "pygments": "2.3.1", "ptyprocess": "0.6.0", "prompt-toolkit": "2.0.9", "prometheus-client": "0.6.0", "pickleshare": "0.7.5", "pexpect": "4.6.0", "parso": "0.3.4", "pandocfilters": "1.4.2", "notebook": "5.7.6", "nbformat": "4.4.0", "mistune": "0.8.4", "markupsafe": "1.1.1", "lxml": "4.3.2", "jupyter-nbextensions-configurator": "0.4.1", "jupyter-latex-envs": "1.4.6", "jupyter-highlight-selected-word": "0.2.0", "jupyter-core": "4.4.0", "jupyter-contrib-nbextensions": "0.5.1", "jupyter-contrib-core": "0.3.3", "jupyter-client": "5.2.4", "jsonschema": "3.0.1", "jinja2": "2.10", "jedi": "0.13.3", "ipython": "7.3.0", "ipython-genutils": "0.2.0", "ipykernel": "5.1.0", "entrypoints": "0.3", "defusedxml": "0.5.0", "bleach": "3.1.0", "backcall": "0.1.0", "attrs": "19.1.0", "appnope": "0.1.0", "wrapt": "1.11.2", "widgetsnbextension": "3.4.2", "wheel": "0.30.0", "werkzeug": "0.15.4", "websocket-client": "0.56.0", "urllib3": "1.24.3", "typing": "3.6.6", "typing-extensions": "3.7.2", "typed-ast": "1.4.0", "tqdm": "4.32.1", "textwrap3": "0.9.2", "termcolor": "1.1.0", "tensorflow": "1.14.0", "tensorflow-estimator": "1.14.0", "tensorboard": "1.14.0", "tenacity": "5.0.4", "tabulate": "0.8.3", "statsmodels": "0.9.0", "smart-open": "1.8.3", "sklearn-pandas": "1.7.0", "skl2onnx": "1.4.9", "six": "1.12.0", "shap": "0.28.5", "setuptools": "41.0.1", "secretstorage": "3.1.1", "seaborn": "0.9.0", "scipy": "1.1.0", "scikit-learn": "0.20.3", "scikit-image": "0.15.0", "s3transfer": "0.2.0", "ruamel.yaml": "0.15.89", "resource": "0.2.1", "requests": "2.21.0", "requests-oauthlib": "1.2.0", "pywavelets": "1.0.3", "pytz": "2019.1", "python-easyconfig": "0.1.7", "python-dateutil": "2.8.0", "pyparsing": "2.4.0", "pyopenssl": "19.0.0", "pynacl": "1.3.0", "pylint": "2.3.1", "pyjwt": "1.7.1", "pydotplus": "2.0.2", "pycparser": "2.19", "pyasn1": "0.4.5", "protobuf": "3.7.1", "pip": "19.1.1", "pillow": "6.0.0", "patsy": "0.5.1", "pathspec": "0.5.9", "paramiko": "2.4.2", "papermill": "1.0.1", "pandas": "0.23.4", "onnxmltools": "1.4.1", "onnxconverter-common": "1.4.2", "onnx": "1.5.0", "oauthlib": "3.0.1", "numpy": "1.16.2", "nimbusml": "1.2.0", "networkx": "2.3", "ndg-httpsclient": "0.5.1", "nbconvert": "5.5.0", "msrestazure": "0.6.0", "msrest": "0.6.6", "mccabe": "0.6.1", "matplotlib": "3.0.3", "markdown": "3.1.1", "lightgbm": "2.2.1", "lazy-object-proxy": "1.4.1", "kiwisolver": "1.1.0", "keras2onnx": "1.4.0", "keras": "2.2.4", "keras-preprocessing": "1.0.9", "keras-applications": "1.0.7", "jsonsir": "0.0.2", "jsonpickle": "1.1", "jsonform": "0.0.2", "jmespath": "0.9.4", "jeepney": "0.4", "itsdangerous": "1.1.0", "isort": "4.3.20", "isodate": "0.6.0", "ipywidgets": "7.4.2", "imageio": "2.5.0", "idna": "2.8", "h5py": "2.9.0", "grpcio": "1.21.1", "google-pasta": "0.1.7", "gensim": "3.7.3", "gast": "0.2.2", "future": "0.17.1", "flask": "1.0.2", "dotnetcore2": "2.1.8", "docutils": "0.14", "docker": "3.7.2", "docker-pycreds": "0.4.0", "distro": "1.4.0", "dill": "0.2.9", "decorator": "4.4.0", "databricks-cli": "0.8.7", "cycler": "0.10.0", "cryptography": "2.6.1", "contextlib2": "0.5.5", "configparser": "3.7.4", "click": "7.0", "chardet": "3.0.4", "cffi": "1.12.3", "certifi": "2019.3.9", "botocore": "1.12.148", "boto3": "1.9.148", "boto": "2.49.0", "bcrypt": "3.1.6", "backports.weakref": "1.0.post1", "backports.tempfile": "1.0", "azureml-widgets": "1.0.55", "azureml-train": "1.0.55", "azureml-train-restclients-hyperdrive": "1.0.55", "azureml-train-core": "1.0.55", "azureml-train-automl": "1.0.55", "azureml-telemetry": "1.0.55", "azureml-sdk": "1.0.55", "azureml-pipeline": "1.0.55", "azureml-pipeline-steps": "1.0.55", "azureml-pipeline-core": "1.0.55", "azureml-explain-model": "1.0.55", "azureml-dataprep": "1.1.10", "azureml-dataprep-native": "13.0.0", "azureml-core": "1.0.55", "azureml-contrib-services": "1.0.55", "azureml-contrib-server": "1.0.55", "azureml-contrib-notebook": "1.0.55", "azureml-contrib-explain-model": "1.0.55", "azureml-automl-core": "1.0.55", "azure-nspkg": "3.0.2", "azure-mgmt-storage": "3.3.0", "azure-mgmt-resource": "2.1.0", "azure-mgmt-nspkg": "3.0.2", "azure-mgmt-keyvault": "1.1.0", "azure-mgmt-containerregistry": "2.8.0", "azure-mgmt-authorization": "0.51.1", "azure-graphrbac": "0.61.0", "azure-common": "1.1.20", "astroid": "2.2.5", "astor": "0.8.0", "asn1crypto": "0.24.0", "applicationinsights": "0.11.9", "ansiwrap": "0.8.4", "adal": "1.2.1", "absl-py": "0.7.1"}
+2019-08-08 01:03:25,127 - INFO - 199 : [RunId:AutoML_07e79484-e977-4c6a-8d4c-2f151ce86c97_2][Starting fit_pipeline]memory usage 343306240
+2019-08-08 01:03:25,128 - INFO - 199 : [RunId:AutoML_07e79484-e977-4c6a-8d4c-2f151ce86c97_2][Starting fit_pipeline]child memory usage 265338880
+2019-08-08 01:03:25,128 - INFO - 199 : [RunId:AutoML_07e79484-e977-4c6a-8d4c-2f151ce86c97_2][Starting fit_pipeline]cpu time 6.297544
+2019-08-08 01:03:25,128 - INFO - 199 : [RunId:AutoML_07e79484-e977-4c6a-8d4c-2f151ce86c97_2][Starting fit_pipeline]child cpu time 13.865108
+2019-08-08 01:03:25,129 - WARNING - 199 : psutil not found, skipping logging cpu and memory
+2019-08-08 01:03:25,129 - INFO - 199 : [RunId:AutoML_07e79484-e977-4c6a-8d4c-2f151ce86c97_2]Platform information: Darwin-18.7.0-x86_64-i386-64bit.
+2019-08-08 01:03:25,129 - INFO - 199 : Using child run AutoML_07e79484-e977-4c6a-8d4c-2f151ce86c97_2
+2019-08-08 01:03:25,129 - INFO - 199 : [RunId:AutoML_07e79484-e977-4c6a-8d4c-2f151ce86c97_2][Before preprocess]memory usage 343306240
+2019-08-08 01:03:25,130 - INFO - 199 : [RunId:AutoML_07e79484-e977-4c6a-8d4c-2f151ce86c97_2][Before preprocess]child memory usage 265338880
+2019-08-08 01:03:25,130 - INFO - 199 : [RunId:AutoML_07e79484-e977-4c6a-8d4c-2f151ce86c97_2][Before preprocess]cpu time 6.299608
+2019-08-08 01:03:25,130 - INFO - 199 : [RunId:AutoML_07e79484-e977-4c6a-8d4c-2f151ce86c97_2][Before preprocess]child cpu time 13.865108
+2019-08-08 01:03:25,131 - INFO - 199 : [RunId:AutoML_07e79484-e977-4c6a-8d4c-2f151ce86c97_2][Before executing pipeline]memory usage 343306240
+2019-08-08 01:03:25,132 - INFO - 199 : [RunId:AutoML_07e79484-e977-4c6a-8d4c-2f151ce86c97_2][Before executing pipeline]child memory usage 265338880
+2019-08-08 01:03:25,132 - INFO - 199 : [RunId:AutoML_07e79484-e977-4c6a-8d4c-2f151ce86c97_2][Before executing pipeline]cpu time 6.301346
+2019-08-08 01:03:25,132 - INFO - 199 : [RunId:AutoML_07e79484-e977-4c6a-8d4c-2f151ce86c97_2][Before executing pipeline]child cpu time 13.865108
+2019-08-08 01:03:25,132 - INFO - 199 : Start executing pipeline {"objects": [{"class_name": "MinMaxScaler", "module": "sklearn.preprocessing", "param_args": [], "param_kwargs": {}, "prepared_kwargs": {}, "spec_class": "preproc"}, {"class_name": "LightGBMClassifier", "module": "automl.client.core.common.model_wrappers", "param_args": [], "param_kwargs": {"boosting_type": "goss", "colsample_bytree": 0.7922222222222222, "learning_rate": 0.1, "max_bin": 170, "max_depth": 4, "min_child_weight": 4, "min_data_in_leaf": 0.03793724137931035, "min_split_gain": 0.8421052631578947, "n_estimators": 50, "num_leaves": 62, "reg_alpha": 0.7894736842105263, "reg_lambda": 0.15789473684210525, "subsample": 1}, "prepared_kwargs": {}, "spec_class": "sklearn"}], "pipeline_id": "3fcd5994fbc5693af6cf93d54810a746b5646707"}.
+2019-08-08 01:03:25,133 - INFO - 199 : Running with the following AutoML settings:
+ - name: automl-classification-pm
+ - subscription_id: 9c0f91b8-eb2f-484c-979c-15848c098a6b
+ - region: japaneast
+ - compute_target: local
+ - spark_context: None
+ - spark_service: None
+ - iterations: 10
+ - primary_metric: AUC_weighted
+ - task_type: classification
+ - validation_size: 0.0
+ - n_cross_validations: 3
+ - y_min: None
+ - y_max: None
+ - num_classes: 2
+ - preprocess: False
+ - lag_length: 0
+ - is_timeseries: False
+ - max_cores_per_iteration: 1
+ - max_concurrent_iterations: 1
+ - iteration_timeout_minutes: 10
+ - mem_in_mb: None
+ - enforce_time_on_windows: False
+ - experiment_timeout_minutes: None
+ - experiment_exit_score: None
+ - whitelist_models: None
+ - blacklist_algos: ['XGBoostClassifier', 'XGBoostClassifier', 'KNN', 'SVM']
+ - auto_blacklist: True
+ - blacklist_samples_reached: True
+ - exclude_nan_labels: True
+ - verbosity: 20
+ - show_warnings: False
+ - model_explainability: False
+ - service_url: None
+ - sdk_url: None
+ - sdk_packages: None
+ - enable_onnx_compatible_models: False
+ - enable_feature_sweeping: True
+ - telemetry_verbosity: INFO
+ - send_telemetry: True
+ - enable_early_stopping: False
+ - early_stopping_n_iters: 10
+ - metrics: None
+ - enable_ensembling: True
+ - enable_stack_ensembling: True
+ - ensemble_iterations: 10
+ - enable_tf: False
+ - enable_cache: True
+ - enable_subsampling: False
+ - subsample_seed: None
+ - enable_nimbusml: False
+ - use_incremental_learning: False
+ - cost_mode: 0
+ - metric_operation: maximize
+2019-08-08 01:03:25,133 - INFO - 199 : Component PrepareData finished after 0.0001072 minutes.
+2019-08-08 01:03:25,133 - INFO - 199 : ActivityStarted: RunPipeline
