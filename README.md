@@ -48,56 +48,13 @@ pip install --upgrade azureml-sdk[notebooks,automl,explain,contrib] azureml-data
 
 <br/>  
 
-## [品質管理 (Quality Control)](./Quality-Control) ##
-
-### [Pythonデータ探索](./Quality-Control/Python-Explore) 
-- Azure Databricks
-    - Histogram
-    - Scatter Plot
-    - Correlation Matrix
-
-### [ビジュアル要因探索](./Quality-Control/Visual-Explore)
-- Power BI (Desktop/service)
-    - Histogram
-    - Scatter Plot
-    - Key Influencers
-
- 
-<!-- ### [**Decision Tree による品質の要因探索**](./Quality-Control/Statistics-approach)
-- Azure Machine Learning service (Python)
-    - メトリック記録、モデル管理、データ管理 -->
-
-### [**Decision Tree による品質の要因探索**](./Quality-Control/Statistics)
-- Azure Machine Learning service (Python)
-    - Scikit Learn Decision Tree
-    - メトリック記録、モデル管理
-
-<!-- ### [**自動機械学習による品質予測モデル構築**](./Quality-Control/Quality-Prediction)
-- Azure Machine Learning service (Python)
-    - Automated Machine Learning -->
-
-### [**モデル解釈手法による品質の要因探索**](./Quality-Control/FactoryQC-Interpret)
-- Azure Machine Learning service (Python)
-    - Automated Machine Learning
-    - Interpretability SDK
-
-
-<!-- ### 外観検査モデルのアプリケーションへのデプロイ
-- Custom Vision Service による画像分類モデル構築
-- ONNXモデルのWindows Machine Learning デプロイ -->
-
-<br/>
-
-## [設備保全 (Predictive Maintenance)](./Predictive-Maintenance) ##
-### [**LSTMによる設備保全**](./Predictive-Maintenance/lstm-RUL-prediction)
-- LSTMによるRULの時系列予測モデル作成
-- GPU Cluster on Machine Learning Compute 
-
-### [時系列データクラスタリング](./Clustering/Dynamic-Time-Warping)
-- Dynamic Time Warping
-
+### [品質管理 (Quality Control)](./Quality-Control)
+### [設備保全 (Predictive Maintenance)](./Predictive-Maintenance) ##
+### [クラスタリング](./Clustering)
+### [Style Transfer](./Style-Transfer)
+<!-- 
 ### 異常検知
-- One-Class SVM
+- One-Class SVM -->
 
 <!-- ## [推薦システム (Recommendation)](Recommendation) ## -->
 <!-- ## 需要予測 (Demand Forecasting) ##
