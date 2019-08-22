@@ -16,5 +16,5 @@
 
 - [マウス操作による故障確率の予測モデリング](./Visual-Status-prediction)
     - Azure Machine Learning Studio 
-    - Azure Machine Learning service - Visual Interface
+    - Azure Machine Learning service - Visual Interface  (2019年後半公開予定)
 
