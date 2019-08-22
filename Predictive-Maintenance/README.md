@@ -6,15 +6,15 @@
 
 ## Sample
 
-- [LSTM による設備耐久時間 RUL の予測](./lstm-RUL-predicitno)
+- [**LSTM による設備耐久時間 RUL の予測**](./lstm-RUL-predicitno)
     - Keras
     - Azure Machine Learning service
         - Machine Learning Compute (GPU)
-- [Automated ML Python SDK による故障確率の予測モデリング](./classificatinon-Status-prediction)
+- [**Automated ML Python SDK による故障確率の予測モデリング**](./classificatinon-Status-prediction)
     - Azure Machine Learning service
         - Automated Machine Learning Python SDK
 
-- [マウス操作による故障確率の予測モデリング](./Visual-Status-prediction)
+- [**マウス操作による故障確率の予測モデリング**](./Visual-Status-prediction)
     - Azure Machine Learning Studio 
     - Azure Machine Learning service - Visual Interface  (2019年後半公開予定)
 
