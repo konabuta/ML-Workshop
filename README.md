@@ -47,7 +47,7 @@ pip install --upgrade azureml-sdk[notebooks,automl,explain,contrib] azureml-data
 
 
 <br/>  
-
+## Sample
 ### [品質管理 (Quality Control)](./Quality-Control)
 ### [設備保全 (Predictive Maintenance)](./Predictive-Maintenance) ##
 ### [クラスタリング](./Clustering)
