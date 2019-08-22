@@ -45,13 +45,13 @@ pip install --upgrade azureml-sdk[notebooks,automl,explain,contrib] azureml-data
 
 詳細は構築手順は[こちらのページ](https://docs.microsoft.com/ja-JP/azure/machine-learning/service/how-to-configure-environment#local)をご参照ください。
 
+<br/>
 
-<br/>  
 ## Sample
 ### [品質管理 (Quality Control)](./Quality-Control)
 ### [設備保全 (Predictive Maintenance)](./Predictive-Maintenance) ##
-### [クラスタリング](./Clustering)
-### [Style Transfer](./Style-Transfer)
+### [クラスタリング (Clustering)](./Clustering)
+### [画風変換 (Style Transfer)](./Style-Transfer)
 <!-- 
 ### 異常検知
 - One-Class SVM -->
