@@ -1,4 +1,4 @@
-#theme: jekyll-theme-cayman
+theme: jekyll-theme-cayman
 title: 'Azure Machine Learning Workshop'
 description: 'This series of workshops will give you hands-on experience on Azure Machine Learning service with Python and dedicated GUI '
 kramdown:
