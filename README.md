@@ -1,15 +1,29 @@
 # Machine Learning Workshop
 
-Machine Learning Workshop materials on Azure Machine Learning
+Azure Machine Learning Workshop materials 
 
-## ターゲットユーザ
+<br/>
+
+## Target User
 - Data Scientist
 - Citizen Data Scientist
 - Business Analyst
 - Data Engineer
 
+<br/>
 
-## 利用するサービス
+
+## Workshop Contents
+### [品質管理 (Quality Control)](./Quality-Control)
+### [設備保全 (Predictive Maintenance)](./Predictive-Maintenance) ##
+### [クラスタリング (Clustering)](./Clustering)
+### [画風変換 (Style Transfer)](./Style-Transfer)
+### [その他 (Other)](./Other)
+
+<br/>
+
+
+## Azure Machine Learning and related service
 ### [Azure Machine Learning service](https://docs.microsoft.com/ja-JP/azure/machine-learning/service/)
 Azure Machine Learning service は、機械学習/深層学習のプロセスを効率的に回すオープンな分析プラットフォームです。
 
@@ -18,12 +32,12 @@ Azure Machine Learning service は、機械学習/深層学習のプロセスを
 ### [Power BI](https://docs.microsoft.com/ja-jp/power-bi/)
 企業のあらゆるデータも可視化・探索することができる Business Analyst 向けのサービスです。
 
-<img src="https://powerbicdn.azureedge.net/cvt-fb1e2b82bc75f091b9556cde890c10a6ccc1090e0ce83484c26d20dacbcf8e52/pictures/pages/desktop/provide_800_450.gif?636996593618659388" width="400">
+<!-- <img src="https://powerbicdn.azureedge.net/cvt-fb1e2b82bc75f091b9556cde890c10a6ccc1090e0ce83484c26d20dacbcf8e52/pictures/pages/desktop/provide_800_450.gif?636996593618659388" width="400"> -->
 
 ### [Azure Databricks](https://docs.azuredatabricks.net/)
 マネージドな Spark プラットフォームです。大量データに対する加工や機械学習を高速に実行することができます。
 
-<img src="https://docs.microsoft.com/ja-jp/azure/azure-databricks/media/what-is-azure-databricks/azure-databricks-overview.png" width="400">
+<!-- <img src="https://docs.microsoft.com/ja-jp/azure/azure-databricks/media/what-is-azure-databricks/azure-databricks-overview.png" width="400"> -->
 
 
 <br/>    
@@ -31,9 +45,9 @@ Azure Machine Learning service は、機械学習/深層学習のプロセスを
 
 
 ## 環境準備
-#### Azure Machine Learning service Python SDK
+### Azure Machine Learning service Python SDK
 
-Azure Machine Learning service が提供している Notebook VM を利用すると、Python SDK が既にインストールされた Jupyter Notebook を利用することができます。
+Azure Machine Learning service が提供している Notebook VM を利用すると、Python SDK が既にインストールされた Jupyter Notebook / JupyterLab を利用することができます。
 
 [Notebook VM 利用手順](https://docs.microsoft.com/ja-JP/azure/machine-learning/service/quickstart-run-cloud-notebook)
 
@@ -47,11 +61,7 @@ pip install --upgrade azureml-sdk[notebooks,automl,explain,contrib] azureml-data
 
 <br/>
 
-## Sample
-### [品質管理 (Quality Control)](./Quality-Control)
-### [設備保全 (Predictive Maintenance)](./Predictive-Maintenance) ##
-### [クラスタリング (Clustering)](./Clustering)
-### [画風変換 (Style Transfer)](./Style-Transfer)
+
 <!-- 
 ### 異常検知
 - One-Class SVM -->
