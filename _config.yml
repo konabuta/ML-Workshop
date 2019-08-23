@@ -2,9 +2,6 @@
 title: 'Azure Machine Learning Workshop'
 description: 'This series of workshops will give you hands-on experience on Azure Machine Learning service with Python and dedicated GUI '
 remote_theme: azure-immersion/cosmos-jekyll-theme
-exclude:
-  - .build/
-  - .circleci/
 plugins:
   - jekyll-sitemap
   - jekyll-mentions
