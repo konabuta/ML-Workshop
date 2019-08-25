@@ -17,7 +17,6 @@ Azure Machine Learning Workshop materials
 ### [品質管理 (Quality Control)](./Quality-Control)
 ### [設備保全 (Predictive Maintenance)](./Predictive-Maintenance) ##
 ### [クラスタリング (Clustering)](./Clustering)
-### [画風変換 (Style Transfer)](./Style-Transfer)
 ### [その他 (Other)](./Other)
 
 <br/>
