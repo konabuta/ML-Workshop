@@ -5,18 +5,18 @@
     - Azure Machine Learning Studio
     - Azure Machine Learning service - Visual Interface  (2019年後半公開予定)
 
-- [**Pythonデータ探索**](./Quality-Control/Python-Explore) 
+- [**Pythonデータ探索**](./Python-Explore) 
     -   Azure Databricks
         - Histogram
         - Scatter Plot
         - Correlation Matrix
 
-- [**ビジュアル要因探索**](./Quality-Control/Visual-Explore)
+- [**ビジュアル要因探索**](./Visual-Explore)
     - Power BI (Desktop/service)
         - Histogram
         - Scatter Plot
         - Key Influencers
-- [**Decision Tree による品質の要因探索**](./Quality-Control/Statistics)
+- [**Decision Tree による品質の要因探索**](./Statistics)
     - Azure Machine Learning service (Python)
         - Scikit-Learn 決定木モデル
         - メトリック記録、モデル管理
@@ -25,7 +25,14 @@
 - Azure Machine Learning service (Python)
     - Automated Machine Learning -->
 
-- [**モデル解釈手法による品質の要因探索**](./Quality-Control/FactoryQC-Interpret)
+- [**モデル解釈手法による品質の要因探索**](./FactoryQC-Interpret)
     - Azure Machine Learning service (Python)
         - Automated Machine Learning
+        - Interpretability SDK
+
+
+- [**品質予測モデルの自動パラメータチューニング**](./FactoryQC-Hyperdrive)
+    - Azure Machine Learning service (Python)
+        - Decision Tree
+        - Hyperdrive
         - Interpretability SDK
