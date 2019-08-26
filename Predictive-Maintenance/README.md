@@ -10,7 +10,7 @@
     - Keras
     - Azure Machine Learning service
         - Machine Learning Compute (GPU)
-- [**Automated ML Python SDK による故障確率の予測モデリング**](./classificatinon-Status-prediction)
+- [**Automated ML Python SDK による故障確率の予測モデリング**](./AutoML-Status-prediction)
     - Azure Machine Learning service
         - Automated Machine Learning Python SDK
 
