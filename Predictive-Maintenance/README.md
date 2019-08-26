@@ -14,6 +14,11 @@
     - Azure Machine Learning service
         - Automated Machine Learning Python SDK
 
+- [Turbofan 設備耐用時間 (RUL) 予測モデリング](./AutoML-RUL-prediction)
+    - Azure Machine Learning service
+        - Automated Machine Learning Python SDK
+    - tsfresh (time-series feature engineering)
+
 - [**マウス操作による故障確率の予測モデリング**](./Visual-Status-prediction)
     - Azure Machine Learning Studio 
     - Azure Machine Learning service - Visual Interface  (2019年後半公開予定)
