@@ -32,10 +32,37 @@ Azure Portal から Azure Machine Learning service ワークススペースを�
 
 本ワークショップのコンテンツは下記になります。
 ```
-git clone https://github.com/konabuta/AzureMLlab.git
+git clone https://github.com/konabuta/ML-Workshop
 ```
 使用する環境に応じて、コンテンツをインポートします。  
 
+
+### **Notebook VM を利用する場合**
+Azure Machine Learning service が提供する Paas型の Jupyter Notebook 環境を利用になる場合は、[こちらの手順](https://docs.microsoft.com/ja-JP/azure/machine-learning/service/tutorial-1st-experiment-sdk-setup#azure)に従って、Notebook VM を構築します。
+
+また、独自のPython仮想環境やJupyter Kernelを作成する場合には、下記のコマンドを参考にしてください。
+
+
+```bash
+#仮想環境の作成
+conda create -n myenv Python=3.6
+```
+```bash
+#仮想環境の有効化
+conda activate myenv
+```
+```bash
+#Azure ML service Python SDK のインストール
+pip install --upgrade azureml-sdk[notebooks,automl,explain,contrib] azureml-dataprep
+```
+```bash
+#インストールしたいパッケージ
+pip install tsfresh
+```
+```bash
+#Jupyer Kernel 追加
+ipython kernel install --user --name=myenv --display-name=myenv
+```
 ### **Azure Notebook を利用する場合**
 Azure Notebook から、GitHub にあるコンテンツのインポート
 - Azure Notebookにログイン
